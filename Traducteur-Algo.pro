@@ -1,5 +1,5 @@
 TEMPLATE = subdirs
 
 SUBDIRS += \
-    binaireLib \
+    BinaireLib0 \
     Traducteur

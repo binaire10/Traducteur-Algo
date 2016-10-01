@@ -31,7 +31,7 @@ win32{
     include(../win32.pri)
 }
 
-include($$PWD/../BinaireLib/import.pri)
+include($$PWD/../BinaireLib0/import.pri)
 
 HEADERS += \
     algo.h \

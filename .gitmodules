@@ -1,0 +1,3 @@
+[submodule "binaireLib"]
+	path = binaireLib
+	url = https://github.com/binaire10/binaireLib.git

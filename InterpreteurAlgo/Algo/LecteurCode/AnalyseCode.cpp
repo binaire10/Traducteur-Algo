@@ -440,7 +440,7 @@ void LecteurCode::ToCppCode(ostream &os)
 {
     os << "#include <iostream>\n#include <string>\n#include <cstdlib>\n#include <vector>\n"
           "#include <ctime>\n\n"
-          "typedef long long int int64_t;\n\n";
+          "#ifnde int64_t\ntypedef long long int int64_t;\n#endif\n\n;
 
     for(Fonction *&i : m_fonctionList)
     {

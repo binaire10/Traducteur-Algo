@@ -7,7 +7,7 @@ class BitWiseOperation : public IOperation
 {
 public:
     constexpr BitWiseOperation() noexcept = default;
-    Type result(const IArguments &) override;
+    Type result(const IArguments &) const override;
     bool matchArguments(const IArguments &) const noexcept override;
 };
 

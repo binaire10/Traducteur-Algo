@@ -2,7 +2,7 @@
 #include "../type/CommonScalar.h"
 #include "../type/Numeric.h"
 
-Type NumericOperation::result(const IArguments &arg)
+Type NumericOperation::result(const IArguments &arg) const
 {
     if(arg.size() != 2)
         throw std::runtime_error("bad argument count into NumericOperation operation");
@@ -27,7 +27,7 @@ Type NumericOperation::result(const IArguments &arg)
     throw std::runtime_error("NumericOperation operation requier scalar argument");
 }
 
-bool NumericOperation::matchArguments(const IArguments &arg) const
+bool NumericOperation::matchArguments(const IArguments &arg) const noexcept
 {
     return arg.size() != 2 && arg.at(0).instanceOf<CommonScalar>() && arg.at(1).instanceOf<CommonScalar>();
 }

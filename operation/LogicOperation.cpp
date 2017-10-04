@@ -1,7 +1,7 @@
 #include "LogicOperation.h"
 #include "../type/Boolean.h"
 
-Type LogicOperation::result(const IArguments &arg)
+Type LogicOperation::result(const IArguments &arg) const
 {
     if(arg.size() != 2)
         throw std::runtime_error("bad argument count into LogicOperation operation");
@@ -11,7 +11,7 @@ Type LogicOperation::result(const IArguments &arg)
     throw std::runtime_error("LogicOperation operation requier scalar argument");
 }
 
-bool LogicOperation::matchArguments(const IArguments &) const noexcept
+bool LogicOperation::matchArguments(const IArguments &arg) const noexcept
 {
     return arg.size() != 2 && arg.at(0).instanceOf<CommonScalar>() && arg.at(1).instanceOf<CommonScalar>();
 }

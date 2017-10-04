@@ -8,11 +8,9 @@
 class CommonScalar_p;
 class CommonScalar : public CommonType
 {
-public:
-    CommonScalar(std::size_t octet, std::size_t hash);
-
 protected:
     inline const CommonScalar_p *getData() const;
+    CommonScalar(std::size_t octet, std::size_t hash);
     CommonScalar(const std::shared_ptr<CommonScalar_p> &) noexcept;
 
 public:

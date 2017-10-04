@@ -2,7 +2,7 @@
 #define NUMERIC_P_INL
 
 #include "Numeric.h"
-#include "numeric_p.h"
+#include "Numeric_p.h"
 
 constexpr Numeric_p::Numeric_p(std::size_t s, std::size_t hashType, Numeric::Type c) : CommonScalar_p(s, hashType), m_type(c)
 {}

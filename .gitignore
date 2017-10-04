@@ -1,3 +1,7 @@
+# Project File
+*.pro.user
+*.pro.user.*
+
 # Compiled Object files
 *.slo
 *.lo

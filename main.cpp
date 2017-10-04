@@ -13,14 +13,14 @@
 
 using namespace std;
 
-int wmain(int, wchar_t **)
+int main()
 {
 //    system("chcp 65001");
     ArgumentType arg({Type(Numeric::getInstance(Numeric::Type::Short)),
                       Type(Numeric::getInstance(Numeric::Type::Short))});
 
-    ArgumentExpression arg2({ std::make_shared<ValueExpression<int64_t>>(5),
-                        std::make_shared<ValueExpression<int64_t>>(5)});
+    ArgumentExpression arg2({ std::make_shared<ValueExpression<long long>>(5),
+                        std::make_shared<ValueExpression<double>>(5)});
     Expression exp(Sum::getInstance(), std::make_shared<ArgumentExpression>(arg2));
 
 //    ValueExpression<std::string> val5("test");

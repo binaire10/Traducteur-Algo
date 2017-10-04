@@ -14,5 +14,4 @@ include($$PWD/operation/operation.pri)
 CONFIG -= qt
 CONFIG += console
 
-QMAKE_CXXFLAGS += -municode
-LIBS += -municode -static
+LIBS += -static

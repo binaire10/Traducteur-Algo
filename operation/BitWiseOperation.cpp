@@ -10,3 +10,8 @@ Type BitWiseOperation::result(const IArguments &arg)
         return arg.at(0).sizeType() < arg.at(1).sizeType() ? arg.at(1) : arg.at(0);
     throw std::runtime_error("BitWiseOperation operation requier scalar argument");
 }
+
+bool BitWiseOperation::matchArguments(const IArguments &arg) const noexcept
+{
+    return arg.size() != 2 && arg.at(0).instanceOf<CommonScalar>() && arg.at(1).instanceOf<CommonScalar>();
+}

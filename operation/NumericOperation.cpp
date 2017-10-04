@@ -26,3 +26,8 @@ Type NumericOperation::result(const IArguments &arg)
     }
     throw std::runtime_error("NumericOperation operation requier scalar argument");
 }
+
+bool NumericOperation::matchArguments(const IArguments &arg) const
+{
+    return arg.size() != 2 && arg.at(0).instanceOf<CommonScalar>() && arg.at(1).instanceOf<CommonScalar>();
+}

@@ -2,10 +2,11 @@
 #define COMMONSCALAR_H
 
 #include <memory>
+#include "CommonType.h"
 #include "../interface/ICommonType.h"
 
 class CommonScalar_p;
-class CommonScalar : public ICommonType
+class CommonScalar : public CommonType
 {
 public:
     CommonScalar(std::size_t octet, std::size_t hash);

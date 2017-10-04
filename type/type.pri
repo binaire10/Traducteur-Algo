@@ -8,7 +8,8 @@ HEADERS += \
     $$PWD/Numeric_p.h \
     $$PWD/Numeric_p.inl \
     $$PWD/ArgumentType.h \
-    $$PWD/Boolean.h
+    $$PWD/Boolean.h \
+    $$PWD/CommonType.h
 
 SOURCES += \
     $$PWD/Type.cpp \
@@ -16,4 +17,5 @@ SOURCES += \
     $$PWD/Character.cpp \
     $$PWD/Numeric.cpp \
     $$PWD/ArgumentType.cpp \
-    $$PWD/Boolean.cpp
+    $$PWD/Boolean.cpp \
+    $$PWD/CommonType.cpp

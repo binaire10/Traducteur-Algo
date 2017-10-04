@@ -10,3 +10,8 @@ Type LogicOperation::result(const IArguments &arg)
         return Type(Boolean::getInstance());
     throw std::runtime_error("LogicOperation operation requier scalar argument");
 }
+
+bool LogicOperation::matchArguments(const IArguments &) const noexcept
+{
+    return arg.size() != 2 && arg.at(0).instanceOf<CommonScalar>() && arg.at(1).instanceOf<CommonScalar>();
+}

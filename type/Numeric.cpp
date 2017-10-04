@@ -1,7 +1,7 @@
 #include "Numeric.h"
 #include "Numeric_p.h"
 #include <map>
-#include "../interface/ICommonTypeVisitor.h"
+#include "../interface/ICommonAbstractDataVisitor.h"
 
 
 Numeric::Numeric(Numeric::Type type) : CommonScalar(std::make_shared<Numeric_p>(sizeofType(type), std::hash<std::string>()("Numeric")^ (std::hash<std::size_t>()(sizeofType(type))<<1), type))
@@ -19,12 +19,12 @@ std::shared_ptr<Numeric> Numeric::getInstance(Numeric::Type t)
     return instance.at(t);
 }
 
-void Numeric::visiteCommonType(ICommonTypeVisitor &visitor) const
+void Numeric::visiteCommonType(ICommonAbstractDataVisitor &visitor) const
 {
     visitor.visiteType(*this);
 }
 
-bool Numeric::equals(const ICommonType &value) const noexcept
+bool Numeric::equals(const ICommonAbstractData &value) const noexcept
 {
     const Numeric *p = dynamic_cast<const Numeric *>(&value);
     return (p && p->getData()->type() == getData()->type()) || value.hashType() == hashType();

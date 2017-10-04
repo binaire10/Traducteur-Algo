@@ -3,7 +3,7 @@
 
 #include <memory>
 #include "CommonAbstractData.h"
-#include "../interface/ICommonType.h"
+#include "../interface/ICommonAbstractData.h"
 
 class CommonScalar_p;
 class CommonScalar : public CommonAbstractData
@@ -14,7 +14,7 @@ protected:
     CommonScalar(const std::shared_ptr<CommonScalar_p> &) noexcept;
 
 public:
-    bool convertible(const ICommonType &v) const noexcept override;
+    bool convertible(const ICommonAbstractData &v) const noexcept override;
     std::size_t hashType() const noexcept final;
     static std::size_t computeHash(std::size_t octet) noexcept;
     std::size_t size() const noexcept override;

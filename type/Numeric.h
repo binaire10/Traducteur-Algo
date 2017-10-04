@@ -39,8 +39,8 @@ public:
 
     static std::shared_ptr<Numeric> getInstance(Type t);
 
-    void visiteCommonType(ICommonTypeVisitor &) const override;
-    bool equals(const ICommonType &) const noexcept override;
+    void visiteCommonType(ICommonAbstractDataVisitor &) const override;
+    bool equals(const ICommonAbstractData &) const noexcept override;
     Type type() const;
 
 protected:

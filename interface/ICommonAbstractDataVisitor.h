@@ -1,16 +1,16 @@
-#ifndef ICOMMONTYPEVISITOR_H
-#define ICOMMONTYPEVISITOR_H
+#ifndef ICOMMONABSTRACTDATAVISITOR_H
+#define ICOMMONABSTRACTDATAVISITOR_H
 
 class Boolean;
 class Character;
 class Numeric;
-class ICommonTypeVisitor
+class ICommonAbstractDataVisitor
 {
 public:
-    constexpr ICommonTypeVisitor() noexcept = default;
+    constexpr ICommonAbstractDataVisitor() noexcept = default;
     virtual void visiteType(const Character &) = undefined;
     virtual void visiteType(const Numeric &) = undefined;
     virtual void visiteType(const Boolean &) = undefined;
 };
 
-#endif // ICOMMONTYPEVISITOR_H
+#endif // ICOMMONABSTRACTDATAVISITOR_H

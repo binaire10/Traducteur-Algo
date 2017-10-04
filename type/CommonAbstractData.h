@@ -3,10 +3,10 @@
 
 #include <memory>
 #include <list>
-#include "../interface/ICommonType.h"
+#include "../interface/ICommonAbstractData.h"
 #include "../interface/IArguments.h"
 
-class CommonAbstractData : public ICommonType
+class CommonAbstractData : public ICommonAbstractData
 {
 public:
     CommonAbstractData(const std::list<std::shared_ptr<IOperator>> &array = {});

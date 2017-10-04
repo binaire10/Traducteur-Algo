@@ -3,25 +3,25 @@
 
 #include <memory>
 
-class ICommonType;
-class ICommonTypeVisitor;
+class ICommonAbstractData;
+class ICommonAbstractDataVisitor;
 class AbstractDataType
 {
 public:
-    AbstractDataType(const std::shared_ptr<ICommonType> &, unsigned pointerLevel = 0u, bool isConst = false, bool isReference = false) noexcept;
+    AbstractDataType(const std::shared_ptr<ICommonAbstractData> &, unsigned pointerLevel = 0u, bool isConst = false, bool isReference = false) noexcept;
     std::string name() const noexcept;
     std::size_t hashType() const noexcept;
     bool equals(const AbstractDataType &) const noexcept;
     bool isConvertible(const AbstractDataType &) const noexcept;
     bool operator ==(const AbstractDataType &) const noexcept;
     bool operator !=(const AbstractDataType &) const noexcept;
-    void visite(ICommonTypeVisitor &);
+    void visite(ICommonAbstractDataVisitor &);
     std::size_t sizeType() const noexcept;
     template<typename>
     inline bool instanceOf();
 
 private:
-    std::shared_ptr<ICommonType> d_ptr;
+    std::shared_ptr<ICommonAbstractData> d_ptr;
     unsigned m_pointerLevel;
     bool m_isConst;
     bool m_isReference;

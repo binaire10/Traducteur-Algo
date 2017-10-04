@@ -7,8 +7,8 @@ class Character : public CommonScalar
 {
 public:
     static std::shared_ptr<Character> getInstance() noexcept;
-    void visiteCommonType(ICommonTypeVisitor &) const override;
-    bool equals(const ICommonType &) const noexcept override;
+    void visiteCommonType(ICommonAbstractDataVisitor &) const override;
+    bool equals(const ICommonAbstractData &) const noexcept override;
     std::string name() const noexcept override;
 
 protected:

@@ -1,7 +1,7 @@
 #include "AbstractDataType.h"
-#include "../interface/ICommonType.h"
+#include "../interface/ICommonAbstractData.h"
 
-AbstractDataType::AbstractDataType(const std::shared_ptr<ICommonType> &ptr, unsigned pointerLevel, bool isConst, bool isReference) noexcept : d_ptr(ptr), m_pointerLevel(pointerLevel), m_isConst(isConst), m_isReference(isReference)
+AbstractDataType::AbstractDataType(const std::shared_ptr<ICommonAbstractData> &ptr, unsigned pointerLevel, bool isConst, bool isReference) noexcept : d_ptr(ptr), m_pointerLevel(pointerLevel), m_isConst(isConst), m_isReference(isReference)
 {}
 
 std::size_t AbstractDataType::hashType() const noexcept
@@ -34,7 +34,7 @@ bool AbstractDataType::operator !=(const AbstractDataType &t) const noexcept
     return !equals(t);
 }
 
-void AbstractDataType::visite(ICommonTypeVisitor &v)
+void AbstractDataType::visite(ICommonAbstractDataVisitor &v)
 {
     d_ptr->visiteCommonType(v);
 }

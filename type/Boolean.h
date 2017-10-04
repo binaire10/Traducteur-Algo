@@ -7,9 +7,9 @@ class Boolean : public CommonScalar
 {
 public:
     static std::shared_ptr<Boolean> getInstance() noexcept;
-    void visiteCommonType(ICommonTypeVisitor &) const override;
+    void visiteCommonType(ICommonAbstractDataVisitor &) const override;
     std::string name() const noexcept override;
-    bool equals(const ICommonType &) const noexcept override;
+    bool equals(const ICommonAbstractData &) const noexcept override;
 protected:
     Boolean();
 };

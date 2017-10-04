@@ -1,15 +1,15 @@
 #include "Character.h"
-#include "../interface/ICommonTypeVisitor.h"
+#include "../interface/ICommonAbstractDataVisitor.h"
 
 Character::Character() : CommonScalar(1, std::hash<std::string>()("Character"))
 {}
 
-void Character::visiteCommonType(ICommonTypeVisitor &visitor) const
+void Character::visiteCommonType(ICommonAbstractDataVisitor &visitor) const
 {
     visitor.visiteType(*this);
 }
 
-bool Character::equals(const ICommonType &v) const noexcept
+bool Character::equals(const ICommonAbstractData &v) const noexcept
 {
     return this == &v || dynamic_cast<const Character *>(&v) || v.hashType() == hashType();
 }

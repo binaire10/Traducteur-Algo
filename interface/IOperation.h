@@ -9,7 +9,7 @@ class IOperation : IOperationVisitable
 public:
     constexpr IOperation() noexcept = default;
     virtual bool matchArguments(const IArguments &) const noexcept = undefined;
-    virtual Type result(const IArguments &) const = undefined;
+    virtual AbstractDataType result(const IArguments &) const = undefined;
 };
 
 #endif // IOPERATION_H

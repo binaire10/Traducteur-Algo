@@ -7,7 +7,7 @@ void Expression::visiteExpression(IExpressionVisitor &v) const
     v.visiteExpression(*this);
 }
 
-Type Expression::result() const
+AbstractDataType Expression::result() const
 {
     return m_operation->result(*m_arguments);
 }

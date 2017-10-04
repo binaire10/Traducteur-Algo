@@ -2,13 +2,13 @@
 #include "../type/CommonScalar.h"
 #include "../type/Numeric.h"
 
-Type NumericOperation::result(const IArguments &arg) const
+AbstractDataType NumericOperation::result(const IArguments &arg) const
 {
     if(arg.size() != 2)
         throw std::runtime_error("bad argument count into NumericOperation operation");
 
-    Type a0 = arg.at(0);
-    Type a1 = arg.at(1);
+    AbstractDataType a0 = arg.at(0);
+    AbstractDataType a1 = arg.at(1);
 
     if(a0.instanceOf<CommonScalar>() && a1.instanceOf<CommonScalar>())
     {

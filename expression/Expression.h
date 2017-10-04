@@ -13,7 +13,7 @@ public:
     Expression(const std::shared_ptr<IOperation> &, const std::shared_ptr<ArgumentExpression> &) noexcept;
     void visiteInstruction(IInstructionVisitor &) const override;
     void visiteExpression(IExpressionVisitor &) const override;
-    Type result() const override;
+    AbstractDataType result() const override;
     std::shared_ptr<IOperation> operation() const;
     std::shared_ptr<ArgumentExpression> arguments() const;
 

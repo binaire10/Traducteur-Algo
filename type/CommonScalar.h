@@ -2,11 +2,11 @@
 #define COMMONSCALAR_H
 
 #include <memory>
-#include "CommonType.h"
+#include "CommonAbstractData.h"
 #include "../interface/ICommonType.h"
 
 class CommonScalar_p;
-class CommonScalar : public CommonType
+class CommonScalar : public CommonAbstractData
 {
 protected:
     inline const CommonScalar_p *getData() const;

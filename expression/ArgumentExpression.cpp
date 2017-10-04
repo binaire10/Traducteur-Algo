@@ -20,7 +20,7 @@ std::size_t ArgumentExpression::size() const noexcept
     return m_expression.size();
 }
 
-Type ArgumentExpression::at(std::size_t i) const
+AbstractDataType ArgumentExpression::at(std::size_t i) const
 {
     return m_expression.at(i)->result();
 }

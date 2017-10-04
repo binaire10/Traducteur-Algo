@@ -13,7 +13,7 @@ public:
     ArgumentExpression(const std::initializer_list<std::shared_ptr<IExpression>> &);
     void visiteArgument(IArgumentVisitor &) const override;
     std::size_t size() const noexcept override;
-    Type at(std::size_t) const override;
+    AbstractDataType at(std::size_t) const override;
 private:
     std::vector<std::shared_ptr<IExpression>> m_expression;
 };

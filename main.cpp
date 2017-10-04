@@ -6,7 +6,7 @@
 #include "type/Character.h"
 #include <map>
 #include "type/ArgumentType.h"
-#include "type/Type.h"
+#include "type/AbstractDataType.h"
 #include "expression/Expression.h"
 #include "expression/ValueExpression.h"
 #include "operation/Sum.h"
@@ -16,8 +16,8 @@ using namespace std;
 int main()
 {
 //    system("chcp 65001");
-    ArgumentType arg({Type(Numeric::getInstance(Numeric::Type::Short)),
-                      Type(Numeric::getInstance(Numeric::Type::Short))});
+    ArgumentType arg({AbstractDataType(Numeric::getInstance(Numeric::Type::Short)),
+                      AbstractDataType(Numeric::getInstance(Numeric::Type::Short))});
 
     ArgumentExpression arg2({ std::make_shared<ValueExpression<long long>>(5),
                         std::make_shared<ValueExpression<double>>(5)});
@@ -31,7 +31,7 @@ int main()
     cout << arg.equals(arg2) << endl;
     cout << arg.isConvertible(arg2) << endl;
 
-    Type test(Numeric::getInstance(Numeric::Type::Short));
+    AbstractDataType test(Numeric::getInstance(Numeric::Type::Short));
     cout << test.instanceOf<CommonScalar>() << endl;
     cout << test.instanceOf<Numeric>() << endl;
     cout << test.instanceOf<Character>() << endl;

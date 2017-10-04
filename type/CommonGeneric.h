@@ -1,9 +1,9 @@
 #ifndef COMMONGENERIC_H
 #define COMMONGENERIC_H
 
-#include "CommonType.h"
+#include "CommonAbstractData.h"
 
-class CommonGeneric : public CommonType
+class CommonGeneric : public CommonAbstractData
 {
 public:
     CommonGeneric();

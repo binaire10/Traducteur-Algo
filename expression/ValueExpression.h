@@ -9,7 +9,7 @@ class ValueExpression : public IExpression
 public:
     constexpr ValueExpression(T value) noexcept;
     void visiteExpression(IExpressionVisitor &) const override;
-    Type result() const override;
+    AbstractDataType result() const override;
 
 private:
     T m_value;
@@ -18,7 +18,7 @@ private:
 template<typename>
 struct ValueExpression_check
 {
-    using fail = Type;
+    using fail = AbstractDataType;
 };
 
 template<typename T>
@@ -27,25 +27,25 @@ typename ValueExpression_check<T>::fail make_typeExpression() = delete;
 template<>
 struct ValueExpression_check<char>
 {
-    using typeC = Type;
+    using typeC = AbstractDataType;
 };
 
 template<>
 struct ValueExpression_check<unsigned>
 {
-    using typeU = Type;
+    using typeU = AbstractDataType;
 };
 
 template<>
 struct ValueExpression_check<long long>
 {
-    using typeLL = Type;
+    using typeLL = AbstractDataType;
 };
 
 template<>
 struct ValueExpression_check<double>
 {
-    using typeD = Type;
+    using typeD = AbstractDataType;
 };
 
 //template<>

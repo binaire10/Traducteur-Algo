@@ -1,7 +1,7 @@
 #include "BitWiseOperation.h"
 #include "../type/CommonScalar.h"
 
-Type BitWiseOperation::result(const IArguments &arg) const
+AbstractDataType BitWiseOperation::result(const IArguments &arg) const
 {
     if(arg.size() != 2)
         throw std::runtime_error("bad argument count into BitWiseOperation operation");

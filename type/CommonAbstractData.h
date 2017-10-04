@@ -1,15 +1,15 @@
-#ifndef COMMONTYPE_H
-#define COMMONTYPE_H
+#ifndef COMMONABSTRACTDATA_H
+#define COMMONABSTRACTDATA_H
 
 #include <memory>
 #include <list>
 #include "../interface/ICommonType.h"
 #include "../interface/IArguments.h"
 
-class CommonType : public ICommonType
+class CommonAbstractData : public ICommonType
 {
 public:
-    CommonType(const std::list<std::shared_ptr<IOperator>> &array = {});
+    CommonAbstractData(const std::list<std::shared_ptr<IOperator>> &array = {});
     bool hasOperand(const IOperator &, const IArguments &) const noexcept override;
 
 protected:
@@ -20,4 +20,4 @@ private:
     std::list<std::shared_ptr<IOperator>> m_operand;
 };
 
-#endif // COMMONTYPE_H
+#endif // COMMONABSTRACTDATA_H

@@ -10,25 +10,25 @@
 template<typename T>
 inline typename ValueExpression_check<T>::typeLL make_typeExpression()
 {
-    return Type(Numeric::getInstance(Numeric::Type::LongLong));
+    return AbstractDataType(Numeric::getInstance(Numeric::Type::LongLong));
 }
 
 template<typename T>
 inline typename ValueExpression_check<T>::typeU make_typeExpression()
 {
-    return Type(Numeric::getInstance(Numeric::Type::Unsigned));
+    return AbstractDataType(Numeric::getInstance(Numeric::Type::Unsigned));
 }
 
 template<typename T>
 inline typename ValueExpression_check<T>::typeD make_typeExpression()
 {
-    return Type(Numeric::getInstance(Numeric::Type::Double));
+    return AbstractDataType(Numeric::getInstance(Numeric::Type::Double));
 }
 
 template<typename T>
 inline typename ValueExpression_check<T>::typeC make_typeExpression()
 {
-    return Type(Character::getInstance());
+    return AbstractDataType(Character::getInstance());
 }
 
 //template<typename T>
@@ -66,7 +66,7 @@ void ValueExpression<T>::visiteExpression(IExpressionVisitor &v) const
 }
 
 template<typename T>
-Type ValueExpression<T>::result() const
+AbstractDataType ValueExpression<T>::result() const
 {
     return make_typeExpression<T>();
 }

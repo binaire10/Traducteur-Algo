@@ -28,6 +28,4 @@ inline const CommonScalar_p *CommonScalar::getData() const
     return reinterpret_cast<const CommonScalar_p *>(d_ptr.get());
 }
 
-#include "CommonScalar_p.h"
-
 #endif // COMMONSCALAR_H

@@ -16,7 +16,7 @@ bool CommonScalar::convertible(const ICommonType &v) const noexcept
 
 std::size_t CommonScalar::hashType() const noexcept
 {
-    return d_ptr->hashType();
+    return getData()->hashType();
 }
 
 std::size_t CommonScalar::computeHash(std::size_t octet) noexcept
@@ -26,5 +26,5 @@ std::size_t CommonScalar::computeHash(std::size_t octet) noexcept
 
 std::size_t CommonScalar::size() const noexcept
 {
-    return d_ptr->size();
+    return getData()->size();
 }

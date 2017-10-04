@@ -9,15 +9,15 @@
 class CommonType : public ICommonType
 {
 public:
-    CommonType(const std::list<std::pair<std::shared_ptr<IOperator>, std::shared_ptr<IArguments>>> &array = {});
+    CommonType(const std::list<std::shared_ptr<IOperator>> &array = {});
     bool hasOperand(const IOperator &, const IArguments &) const noexcept override;
 
 protected:
-    void addParamter(const std::pair<std::shared_ptr<IOperator>, std::shared_ptr<IArguments>> &);
-    void addParamter(const std::list<std::pair<std::shared_ptr<IOperator>, std::shared_ptr<IArguments>>> &);
+    void addParamter(const std::shared_ptr<IOperator> &);
+    void addParamter(const std::list<std::shared_ptr<IOperator>> &);
 
 private:
-    std::list<std::pair<std::shared_ptr<IOperator>, std::shared_ptr<IArguments>>> m_operand;
+    std::list<std::shared_ptr<IOperator>> m_operand;
 };
 
 #endif // COMMONTYPE_H

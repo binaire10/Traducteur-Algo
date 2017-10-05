@@ -15,9 +15,9 @@ HEADERS += \
 SOURCES += \
     $$PWD/CommonScalar.cpp \
     $$PWD/Character.cpp \
-    $$PWD/ArgumentType.cpp \
     $$PWD/Boolean.cpp \
     $$PWD/CommonGeneric.cpp \
     $$PWD/AbstractDataType.cpp \
     $$PWD/CommonAbstractData.cpp \
-    $$PWD/CommonNumeric.cpp
+    $$PWD/CommonNumeric.cpp \
+    $$PWD/TypeParameters.cpp

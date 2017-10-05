@@ -5,7 +5,7 @@
 #include "type/CommonNumeric.h"
 #include "type/Character.h"
 #include <map>
-#include "type/ArgumentType.h"
+#include "type/TypeParameters.h"
 #include "type/AbstractDataType.h"
 #include "expression/Expression.h"
 #include "expression/ValueExpression.h"
@@ -16,7 +16,7 @@ using namespace std;
 int main()
 {
 //    system("chcp 65001");
-    ArgumentType arg({AbstractDataType(CommonNumeric::getInstance(CommonNumeric::Type::Short)),
+    TypeParameters arg({AbstractDataType(CommonNumeric::getInstance(CommonNumeric::Type::Short)),
                       AbstractDataType(CommonNumeric::getInstance(CommonNumeric::Type::Short))});
 
     ArgumentExpression arg2({ std::make_shared<ValueExpression<long long>>(5),

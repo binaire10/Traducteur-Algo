@@ -15,6 +15,7 @@ public:
 protected:
     void addSupportedOperand(const std::shared_ptr<IOperator> &);
     void addSupportedOperand(const std::list<std::shared_ptr<IOperator>> &);
+    void addSupportedOperand(const std::initializer_list<std::shared_ptr<IOperator>> &);
 
 private:
     std::list<std::shared_ptr<IOperator>> m_operand;

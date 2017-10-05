@@ -2,10 +2,22 @@
 #include "CommonNumeric_p.h"
 #include <map>
 #include "../interface/ICommonAbstractDataVisitor.h"
+#include "../operation/And.h"
+#include "../operation/Or.h"
+#include "../operation/Sum.h"
+#include "../operation/Substract.h"
+#include "../operation/Not.h"
+#include "../operation/Multiplication.h"
+#include "../operation/Division.h"
 
 
 CommonNumeric::CommonNumeric(CommonNumeric::Type type) : CommonScalar(std::make_shared<CommonNumeric_p>(sizeofType(type), std::hash<std::string>()("Numeric")^ (std::hash<std::size_t>()(sizeofType(type))<<1), type))
-{}
+{
+    addSupportedOperand({BitWise::And::getInstance(), BitWise::Not::getInstance(), BitWise::Or::getInstance(),
+                         Logic::And::getInstance(), Logic::Not::getInstance(), Logic::Or::getInstance(),
+                         Sum::getInstance(), Substract::getInstance(), Multiplication::getInstance(),
+                         Division::getInstance()});
+}
 
 std::shared_ptr<CommonNumeric> CommonNumeric::getInstance(CommonNumeric::Type t)
 {
@@ -36,7 +48,12 @@ CommonNumeric::Type CommonNumeric::type() const
 }
 
 CommonNumeric::CommonNumeric(const std::shared_ptr<CommonNumeric_p> &ptr) : CommonScalar(ptr)
-{}
+{
+    addSupportedOperand({BitWise::And::getInstance(), BitWise::Not::getInstance(), BitWise::Or::getInstance(),
+                         Logic::And::getInstance(), Logic::Not::getInstance(), Logic::Or::getInstance(),
+                         Sum::getInstance(), Substract::getInstance(), Multiplication::getInstance(),
+                         Division::getInstance()});
+}
 
 std::string CommonNumeric::name() const noexcept
 {

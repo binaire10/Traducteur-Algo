@@ -13,7 +13,7 @@ bool CommonAbstractData::hasOperand(const IOperator &op, const IParameters &arg)
     }) == m_operand.end();
 }
 
-void CommonAbstractData::addSupportedOperand(const std::list<std::shared_ptr<IOperator>> &tab)
+void CommonAbstractData::addSupportedOperand(const std::initializer_list<std::shared_ptr<IOperator> > &tab)
 {
     m_operand.insert(m_operand.begin(), tab.begin(), tab.end());
 }
@@ -21,4 +21,9 @@ void CommonAbstractData::addSupportedOperand(const std::list<std::shared_ptr<IOp
 void CommonAbstractData::addSupportedOperand(const std::shared_ptr<IOperator> &val)
 {
     m_operand.push_back(val);
+}
+
+void CommonAbstractData::addSupportedOperand(const std::list<std::shared_ptr<IOperator> > &tab)
+{
+    m_operand.insert(m_operand.begin(), tab.begin(), tab.end());
 }

@@ -11,9 +11,11 @@ namespace BitWise
     public:
         static std::shared_ptr<Or> getInstance() noexcept;
         void visiteOperation(IOperationVisitor &) const override;
+        void visiteOperator(IOperatorVisitor &) const override;
 
     protected:
-        constexpr Or() = default;
+        constexpr Or() noexcept : BitWiseOperation(2)
+        {}
     };
 }
 namespace Logic
@@ -23,9 +25,11 @@ namespace Logic
     public:
         static std::shared_ptr<Or> getInstance() noexcept;
         void visiteOperation(IOperationVisitor &) const override;
+        void visiteOperator(IOperatorVisitor &) const override;
 
     protected:
-        constexpr Or() = default;
+        constexpr Or() noexcept : LogicOperation(2)
+        {}
     };
 }
 

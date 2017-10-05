@@ -1,6 +1,7 @@
 #include "Sum.h"
 #include "../type/CommonScalar.h"
 #include "../interface/IOperationVisitor.h"
+#include "../interface/IOperatorVisitor.h"
 
 std::shared_ptr<Sum> Sum::getInstance() noexcept
 {
@@ -11,4 +12,9 @@ std::shared_ptr<Sum> Sum::getInstance() noexcept
 void Sum::visiteOperation(IOperationVisitor &v) const
 {
     v.visiteOperation(*this);
+}
+
+void Sum::visiteOperator(IOperatorVisitor &v) const
+{
+    v.visiteOperator(*this);
 }

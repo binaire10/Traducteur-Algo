@@ -1,5 +1,6 @@
 #include "Substract.h"
 #include "../interface/IOperationVisitor.h"
+#include "../interface/IOperatorVisitor.h"
 
 std::shared_ptr<Substract> Substract::getInstance() noexcept
 {
@@ -10,4 +11,9 @@ std::shared_ptr<Substract> Substract::getInstance() noexcept
 void Substract::visiteOperation(IOperationVisitor &v) const
 {
     v.visiteOperation(*this);
+}
+
+void Substract::visiteOperator(IOperatorVisitor &v) const
+{
+    v.visiteOperator(*this);
 }

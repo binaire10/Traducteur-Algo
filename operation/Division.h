@@ -8,9 +8,10 @@ class Division : public NumericOperation
 public:
     static std::shared_ptr<Division> getInstance() noexcept;
     void visiteOperation(IOperationVisitor &) const override;
+    void visiteOperator(IOperatorVisitor &) const override;
 
 protected:
-    constexpr Division() = default;
+    constexpr Division() noexcept = default;
 };
 
 #endif // DIVISION_H

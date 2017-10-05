@@ -8,6 +8,7 @@ class Sum : public NumericOperation
 public:
     static std::shared_ptr<Sum> getInstance() noexcept;
     void visiteOperation(IOperationVisitor &) const override;
+    void visiteOperator(IOperatorVisitor &) const override;
 
 protected:
     constexpr Sum() noexcept = default;

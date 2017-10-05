@@ -2,16 +2,16 @@
 #define ARGUMENTEXPRESSION_H
 
 #include <vector>
-#include "../interface/IArguments.h"
+#include "../interface/IParameters.h"
 #include "../interface/IExpression.h"
 
-class ArgumentExpression : public IArguments
+class ArgumentExpression : public IParameters
 {
 public:
     ArgumentExpression();
     ArgumentExpression(const std::vector<std::shared_ptr<IExpression>> &);
     ArgumentExpression(const std::initializer_list<std::shared_ptr<IExpression>> &);
-    void visiteArgument(IArgumentVisitor &) const override;
+    void visiteArgument(IParametersVisitor &) const override;
     std::size_t size() const noexcept override;
     AbstractDataType at(std::size_t) const override;
 private:

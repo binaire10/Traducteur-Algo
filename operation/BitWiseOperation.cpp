@@ -1,7 +1,7 @@
 #include "BitWiseOperation.h"
 #include "../type/CommonScalar.h"
 
-AbstractDataType BitWiseOperation::result(const IArguments &arg) const
+AbstractDataType BitWiseOperation::result(const IParameters &arg) const
 {
     if(arg.size() != 2)
         throw std::runtime_error("bad argument count into BitWiseOperation operation");
@@ -11,7 +11,7 @@ AbstractDataType BitWiseOperation::result(const IArguments &arg) const
     throw std::runtime_error("BitWiseOperation operation requier scalar argument");
 }
 
-bool BitWiseOperation::matchArguments(const IArguments &arg) const noexcept
+bool BitWiseOperation::matchArguments(const IParameters &arg) const noexcept
 {
     return arg.size() != 2 && arg.at(0).instanceOf<CommonScalar>() && arg.at(1).instanceOf<CommonScalar>();
 }

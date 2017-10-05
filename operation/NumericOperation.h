@@ -7,8 +7,8 @@ class NumericOperation : public IOperation
 {
 public:
     constexpr NumericOperation() = default;
-    AbstractDataType result(const IArguments &arg) const override;
-    bool matchArguments(const IArguments &) const noexcept override;
+    AbstractDataType result(const IParameters &arg) const override;
+    bool matchArguments(const IParameters &) const noexcept override;
 };
 
 #endif // NUMERICOPERATION_H

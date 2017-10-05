@@ -7,8 +7,8 @@ class LogicOperation : public IOperation
 {
 public:
     constexpr LogicOperation() noexcept = default;
-    AbstractDataType result(const IArguments &) const override;
-    bool matchArguments(const IArguments &) const noexcept override;
+    AbstractDataType result(const IParameters &) const override;
+    bool matchArguments(const IParameters &) const noexcept override;
 };
 
 #endif // LOGICOPERATION_H

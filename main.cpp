@@ -2,7 +2,7 @@
 #include "Function.h"
 #include <type/CommonScalar.h>
 #include <limits>
-#include "type/Numeric.h"
+#include "type/CommonNumeric.h"
 #include "type/Character.h"
 #include <map>
 #include "type/ArgumentType.h"
@@ -16,8 +16,8 @@ using namespace std;
 int main()
 {
 //    system("chcp 65001");
-    ArgumentType arg({AbstractDataType(Numeric::getInstance(Numeric::Type::Short)),
-                      AbstractDataType(Numeric::getInstance(Numeric::Type::Short))});
+    ArgumentType arg({AbstractDataType(CommonNumeric::getInstance(CommonNumeric::Type::Short)),
+                      AbstractDataType(CommonNumeric::getInstance(CommonNumeric::Type::Short))});
 
     ArgumentExpression arg2({ std::make_shared<ValueExpression<long long>>(5),
                         std::make_shared<ValueExpression<double>>(5)});
@@ -31,9 +31,9 @@ int main()
     cout << arg.equals(arg2) << endl;
     cout << arg.isConvertible(arg2) << endl;
 
-    AbstractDataType test(Numeric::getInstance(Numeric::Type::Short));
+    AbstractDataType test(CommonNumeric::getInstance(CommonNumeric::Type::Short));
     cout << test.instanceOf<CommonScalar>() << endl;
-    cout << test.instanceOf<Numeric>() << endl;
+    cout << test.instanceOf<CommonNumeric>() << endl;
     cout << test.instanceOf<Character>() << endl;
     cout << exp.result().name() << endl;
 

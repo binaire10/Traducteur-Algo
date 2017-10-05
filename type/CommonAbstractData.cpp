@@ -4,7 +4,7 @@
 CommonAbstractData::CommonAbstractData(const std::list<std::shared_ptr<IOperator>> &array) : m_operand(array)
 {}
 
-bool CommonAbstractData::hasOperand(const IOperator &op, const IArguments &arg) const noexcept
+bool CommonAbstractData::hasOperand(const IOperator &op, const IParameters &arg) const noexcept
 {
     if(!op.matchArguments(arg))
         return false;

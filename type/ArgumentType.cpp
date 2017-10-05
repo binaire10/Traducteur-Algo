@@ -1,5 +1,5 @@
 #include "ArgumentType.h"
-#include "../interface/IArgumentVisitor.h"
+#include "../interface/IParametersVisitor.h"
 
 ArgumentType::ArgumentType()
 {}
@@ -10,7 +10,7 @@ ArgumentType::ArgumentType(const std::vector<AbstractDataType> &tab) : m_types(t
 ArgumentType::ArgumentType(const std::initializer_list<AbstractDataType> &tab) : m_types(tab)
 {}
 
-void ArgumentType::visiteArgument(IArgumentVisitor &v) const
+void ArgumentType::visiteArgument(IParametersVisitor &v) const
 {
     v.visiteArgument(*this);
 }

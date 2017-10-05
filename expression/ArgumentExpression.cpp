@@ -1,5 +1,5 @@
 #include "ArgumentExpression.h"
-#include "../interface/IArgumentVisitor.h"
+#include "../interface/IParametersVisitor.h"
 
 ArgumentExpression::ArgumentExpression()
 {}
@@ -10,7 +10,7 @@ ArgumentExpression::ArgumentExpression(const std::vector<std::shared_ptr<IExpres
 ArgumentExpression::ArgumentExpression(const std::initializer_list<std::shared_ptr<IExpression> > &tab) : m_expression(tab)
 {}
 
-void ArgumentExpression::visiteArgument(IArgumentVisitor &v) const
+void ArgumentExpression::visiteArgument(IParametersVisitor &v) const
 {
     v.visiteArgument(*this);
 }

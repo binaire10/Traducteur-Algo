@@ -3,26 +3,26 @@
 
 #include "ValueExpression.h"
 #include "../interface/IExpressionVisitor.h"
-#include "../type/Numeric.h"
+#include "../type/CommonNumeric.h"
 #include "../type/Character.h"
 #include "../type/Boolean.h"
 
 template<typename T>
 inline typename ValueExpression_check<T>::typeLL make_typeExpression()
 {
-    return AbstractDataType(Numeric::getInstance(Numeric::Type::LongLong));
+    return AbstractDataType(CommonNumeric::getInstance(CommonNumeric::Type::LongLong));
 }
 
 template<typename T>
 inline typename ValueExpression_check<T>::typeU make_typeExpression()
 {
-    return AbstractDataType(Numeric::getInstance(Numeric::Type::Unsigned));
+    return AbstractDataType(CommonNumeric::getInstance(CommonNumeric::Type::Unsigned));
 }
 
 template<typename T>
 inline typename ValueExpression_check<T>::typeD make_typeExpression()
 {
-    return AbstractDataType(Numeric::getInstance(Numeric::Type::Double));
+    return AbstractDataType(CommonNumeric::getInstance(CommonNumeric::Type::Double));
 }
 
 template<typename T>

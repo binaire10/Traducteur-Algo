@@ -3,13 +3,13 @@
 
 class Boolean;
 class Character;
-class Numeric;
+class CommonNumeric;
 class ICommonAbstractDataVisitor
 {
 public:
     constexpr ICommonAbstractDataVisitor() noexcept = default;
     virtual void visiteType(const Character &) = undefined;
-    virtual void visiteType(const Numeric &) = undefined;
+    virtual void visiteType(const CommonNumeric &) = undefined;
     virtual void visiteType(const Boolean &) = undefined;
 };
 

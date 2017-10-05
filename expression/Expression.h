@@ -4,7 +4,7 @@
 #include "../interface/IInstruction.h"
 #include "../interface/IExpression.h"
 #include "../interface/IOperation.h"
-#include "../interface/IArguments.h"
+#include "../interface/IParameters.h"
 #include "ArgumentExpression.h"
 
 class Expression : public IExpression, public IInstruction

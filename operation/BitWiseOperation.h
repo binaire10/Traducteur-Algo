@@ -7,8 +7,8 @@ class BitWiseOperation : public IOperation
 {
 public:
     constexpr BitWiseOperation() noexcept = default;
-    AbstractDataType result(const IArguments &) const override;
-    bool matchArguments(const IArguments &) const noexcept override;
+    AbstractDataType result(const IParameters &) const override;
+    bool matchArguments(const IParameters &) const noexcept override;
 };
 
 #endif // BITWISEOPERATION_H

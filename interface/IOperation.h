@@ -2,14 +2,14 @@
 #define IOPERATION_H
 
 #include "IOperationVisitable.h"
-#include "IArguments.h"
+#include "IParameters.h"
 
 class IOperation : IOperationVisitable
 {
 public:
     constexpr IOperation() noexcept = default;
-    virtual bool matchArguments(const IArguments &) const noexcept = undefined;
-    virtual AbstractDataType result(const IArguments &) const = undefined;
+    virtual bool matchArguments(const IParameters &) const noexcept = undefined;
+    virtual AbstractDataType result(const IParameters &) const = undefined;
 };
 
 #endif // IOPERATION_H

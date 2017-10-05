@@ -1,6 +1,6 @@
-#include "IArguments.h"
+#include "IParameters.h"
 
-bool IArguments::isConvertible(const IArguments &arg) const noexcept
+bool IParameters::isConvertible(const IParameters &arg) const noexcept
 {
     if(arg.size() != size())
         return false;
@@ -10,7 +10,7 @@ bool IArguments::isConvertible(const IArguments &arg) const noexcept
     return true;
 }
 
-bool IArguments::equals(const IArguments &arg) const noexcept
+bool IParameters::equals(const IParameters &arg) const noexcept
 {
     if(arg.size() != size())
         return false;

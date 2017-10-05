@@ -45,7 +45,7 @@ std::size_t CommonGeneric::size() const noexcept
     return 0;
 }
 
-bool CommonGeneric::hasOperand(const IOperator &t, const IArguments &a) const noexcept
+bool CommonGeneric::hasOperand(const IOperator &t, const IParameters &a) const noexcept
 {
     for(const std::shared_ptr<ICommonAbstractData> &i : m_generic)
         if(i->hasOperand(t, a))

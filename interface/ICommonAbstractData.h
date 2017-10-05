@@ -4,7 +4,7 @@
 #include <string>
 #include "IOperator.h"
 #include "ICommonAbstractDataVisitable.h"
-#include "IArguments.h"
+#include "IParameters.h"
 
 class ICommonAbstractData : public ICommonAbstractDataVisitable
 {
@@ -15,7 +15,7 @@ public:
     virtual bool equals(const ICommonAbstractData &) const noexcept = undefined;
     virtual bool convertible(const ICommonAbstractData &) const noexcept = undefined;
     virtual std::size_t size() const noexcept = undefined;
-    virtual bool hasOperand(const IOperator &, const IArguments &) const noexcept = undefined;
+    virtual bool hasOperand(const IOperator &, const IParameters &) const noexcept = undefined;
 };
 
 #endif // ICOMMONABSTRACTDATA_H

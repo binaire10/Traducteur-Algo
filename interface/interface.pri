@@ -12,8 +12,6 @@ HEADERS += \
     $$PWD/IOperationVisitor.h \
     $$PWD/IArguments.h \
     $$PWD/IOperator.h \
-    $$PWD/ITypeVisitor.h \
-    $$PWD/ITypeVisitable.h \
     $$PWD/IOperatorVisitor.h \
     $$PWD/IOperatorVisitable.h \
     $$PWD/IArgumentVisitable.h \
@@ -21,7 +19,9 @@ HEADERS += \
     $$PWD/IFunction.h \
     $$PWD/ICommonAbstractDataVisitable.h \
     $$PWD/ICommonAbstractData.h \
-    $$PWD/ICommonAbstractDataVisitor.h
+    $$PWD/ICommonAbstractDataVisitor.h \
+    $$PWD/IAbstractDataTypeVisitor.h \
+    $$PWD/IAbstractDataTypeVisitable.h
 
 SOURCES += \
     $$PWD/IArguments.cpp

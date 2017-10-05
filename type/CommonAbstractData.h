@@ -13,8 +13,8 @@ public:
     bool hasOperand(const IOperator &, const IArguments &) const noexcept override;
 
 protected:
-    void addParamter(const std::shared_ptr<IOperator> &);
-    void addParamter(const std::list<std::shared_ptr<IOperator>> &);
+    void addSupportedOperand(const std::shared_ptr<IOperator> &);
+    void addSupportedOperand(const std::list<std::shared_ptr<IOperator>> &);
 
 private:
     std::list<std::shared_ptr<IOperator>> m_operand;

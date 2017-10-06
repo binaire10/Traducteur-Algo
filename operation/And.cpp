@@ -1,8 +1,8 @@
 #include "And.h"
-#include "../interface/IOperationVisitor.h"
-#include "../interface/IOperatorVisitor.h"
+#include "../interface/AbstractOperationVisitor.h"
+#include "../interface/AbstractOperatorVisitor.h"
 
-void Logic::And::visiteOperation(IOperationVisitor &v) const
+void Logic::And::visiteOperation(AbstractOperationVisitor &v) const
 {
     v.visiteOperation(*this);
 }
@@ -13,12 +13,12 @@ std::shared_ptr<Logic::And> Logic::And::getInstance() noexcept
     return instance;
 }
 
-void Logic::And::visiteOperator(IOperatorVisitor &v) const
+void Logic::And::visiteOperator(AbstractOperatorVisitor &v) const
 {
     v.visiteOperator(*this);
 }
 
-void BitWise::And::visiteOperation(IOperationVisitor &v) const
+void BitWise::And::visiteOperation(AbstractOperationVisitor &v) const
 {
     v.visiteOperation(*this);
 }
@@ -29,7 +29,7 @@ std::shared_ptr<BitWise::And> BitWise::And::getInstance() noexcept
     return instance;
 }
 
-void BitWise::And::visiteOperator(IOperatorVisitor &v) const
+void BitWise::And::visiteOperator(AbstractOperatorVisitor &v) const
 {
     v.visiteOperator(*this);
 }

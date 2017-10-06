@@ -9,9 +9,9 @@ namespace BitWise
     class And : public BitWiseOperation
     {
     public:
-        void visiteOperation(IOperationVisitor &) const override;
+        void visiteOperation(AbstractOperationVisitor &) const override;
         static std::shared_ptr<And> getInstance() noexcept;
-        void visiteOperator(IOperatorVisitor &) const override;
+        void visiteOperator(AbstractOperatorVisitor &) const override;
 
     protected:
         constexpr And() noexcept : BitWiseOperation(2)
@@ -23,9 +23,9 @@ namespace Logic
     class And : public LogicOperation
     {
     public:
-        void visiteOperation(IOperationVisitor &) const override;
+        void visiteOperation(AbstractOperationVisitor &) const override;
         static std::shared_ptr<And> getInstance() noexcept;
-        void visiteOperator(IOperatorVisitor &) const override;
+        void visiteOperator(AbstractOperatorVisitor &) const override;
 
     protected:
         constexpr And() noexcept  : LogicOperation(2)

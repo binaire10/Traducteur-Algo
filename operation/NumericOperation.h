@@ -7,8 +7,10 @@ class NumericOperation : public AbstractOperator
 {
 public:
     constexpr NumericOperation() = default;
-    AbstractDataType result(const IParameters &arg) const override;
+    std::shared_ptr<AbstractDataType> result(const IParameters &arg) const override;
     bool matchArguments(const IParameters &) const noexcept override;
 };
+
+#include "../type/AbstractDataType.h"
 
 #endif // NUMERICOPERATION_H

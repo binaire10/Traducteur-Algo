@@ -9,7 +9,7 @@ class IExpression : public IExpressionVisitable
 {
 public:
     constexpr IExpression() noexcept = default;
-    virtual AbstractDataType result() const = undefined;
+    virtual std::shared_ptr<AbstractDataType> result() const = undefined;
 };
 
 #endif // IEXPRESSION_H

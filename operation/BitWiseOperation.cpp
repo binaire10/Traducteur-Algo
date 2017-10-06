@@ -1,17 +1,16 @@
 #include "BitWiseOperation.h"
-#include "../type/CommonScalar.h"
+#include "../type/ScalarDataType.h"
 
-AbstractDataType BitWiseOperation::result(const IParameters &arg) const
+std::shared_ptr<AbstractDataType> BitWiseOperation::result(const IParameters &arg) const
 {
     if(arg.size() != m_parametersCount)
         throw std::runtime_error("bad argument count into BitWiseOperation operation");
 //
-    return arg.at(0).sizeType() < arg.at(1).sizeType() ? arg.at(1) : arg.at(0);
     if(matchArguments(arg))
     {
-        AbstractDataType Data = arg.at(0);
+        std::shared_ptr<AbstractDataType> Data = arg.at(0);
         for(std::size_t i(1) ; i < m_parametersCount ; ++i)
-            if(Data.sizeType() < arg.at(i).sizeType())
+            if(Data->size() < arg.at(i)->size())
                 Data = arg.at(i);
         return Data;
     }
@@ -23,7 +22,7 @@ bool BitWiseOperation::matchArguments(const IParameters &arg) const noexcept
     if(arg.size() == m_parametersCount)
     {
         for(std::size_t i(0) ; i < m_parametersCount ; ++i)
-            if(!arg.at(0).instanceOf<CommonScalar>())
+            if(!arg.at(0)->instanceOf<ScalarDataType>())
                 return false;
     }
     else

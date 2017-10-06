@@ -2,9 +2,9 @@
 #define IFUNCTION_H
 
 #include "IFunctionVisitable.h"
-#include "IOperation.h"
+#include "AbstractOperation.h"
 
-class IFunction : public IFunctionVisitable, public IOperation
+class IFunction : public IFunctionVisitable, public AbstractOperation
 {
 public:
     constexpr IFunction() = default;

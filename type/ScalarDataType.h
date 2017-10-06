@@ -6,8 +6,10 @@
 class ScalarDataType : public AbstractDataType
 {
 public:
-    constexpr ScalarDataType() noexcept = default;
-    bool isConvertible(const AbstractDataType &) noexcept override;
+    bool isConvertible(const AbstractDataType &) const noexcept override;
+
+protected:
+    ScalarDataType(std::size_t hash, std::size_t size) noexcept;
 };
 
 #endif // SCALARDATATYPE_H

@@ -8,7 +8,7 @@ class LogicOperation : public AbstractOperator
 public:
     constexpr LogicOperation(std::size_t t) noexcept : m_parametersCount(t)
     {}
-    AbstractDataType result(const IParameters &) const override;
+    std::shared_ptr<AbstractDataType> result(const IParameters &) const override;
     bool matchArguments(const IParameters &) const noexcept override;
 
 private:

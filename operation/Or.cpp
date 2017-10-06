@@ -1,6 +1,6 @@
 #include "Or.h"
-#include "../interface/IOperationVisitor.h"
-#include "../interface/IOperatorVisitor.h"
+#include "../interface/AbstractOperationVisitor.h"
+#include "../interface/AbstractOperatorVisitor.h"
 
 std::shared_ptr<Logic::Or> Logic::Or::getInstance() noexcept
 {
@@ -8,12 +8,12 @@ std::shared_ptr<Logic::Or> Logic::Or::getInstance() noexcept
     return instance;
 }
 
-void Logic::Or::visiteOperation(IOperationVisitor &v) const
+void Logic::Or::visiteOperation(AbstractOperationVisitor &v) const
 {
     v.visiteOperation(*this);
 }
 
-void Logic::Or::visiteOperator(IOperatorVisitor &v) const
+void Logic::Or::visiteOperator(AbstractOperatorVisitor &v) const
 {
     v.visiteOperator(*this);
 }
@@ -24,12 +24,12 @@ std::shared_ptr<BitWise::Or> BitWise::Or::getInstance() noexcept
     return instance;
 }
 
-void BitWise::Or::visiteOperation(IOperationVisitor &v) const
+void BitWise::Or::visiteOperation(AbstractOperationVisitor &v) const
 {
     v.visiteOperation(*this);
 }
 
-void BitWise::Or::visiteOperator(IOperatorVisitor &v) const
+void BitWise::Or::visiteOperator(AbstractOperatorVisitor &v) const
 {
     v.visiteOperator(*this);
 }

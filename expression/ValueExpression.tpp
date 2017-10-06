@@ -3,32 +3,32 @@
 
 #include "ValueExpression.h"
 #include "../interface/IExpressionVisitor.h"
-#include "../type/CommonNumeric.h"
+#include "../type/DecimalDataType.h"
+#include "../type/NumericDataType.h"
 #include "../type/Character.h"
-#include "../type/Boolean.h"
 
 template<typename T>
 inline typename ValueExpression_check<T>::typeLL make_typeExpression()
 {
-    return AbstractDataType(CommonNumeric::getInstance(CommonNumeric::Type::LongLong));
+    return NumericDataType::getInstance(NumericDataType::Type::LongLong);
 }
 
 template<typename T>
 inline typename ValueExpression_check<T>::typeU make_typeExpression()
 {
-    return AbstractDataType(CommonNumeric::getInstance(CommonNumeric::Type::Unsigned));
+    return NumericDataType::getInstance(NumericDataType::Type::Unsigned);
 }
 
 template<typename T>
 inline typename ValueExpression_check<T>::typeD make_typeExpression()
 {
-    return AbstractDataType(CommonNumeric::getInstance(CommonNumeric::Type::Double));
+    return NumericDataType::getInstance(NumericDataType::Type::Double);
 }
 
 template<typename T>
 inline typename ValueExpression_check<T>::typeC make_typeExpression()
 {
-    return AbstractDataType(Character::getInstance());
+    return Character::getInstance();
 }
 
 //template<typename T>
@@ -66,7 +66,7 @@ void ValueExpression<T>::visiteExpression(IExpressionVisitor &v) const
 }
 
 template<typename T>
-AbstractDataType ValueExpression<T>::result() const
+std::shared_ptr<AbstractDataType> ValueExpression<T>::result() const
 {
     return make_typeExpression<T>();
 }

@@ -1,5 +1,5 @@
-#ifndef IOPERATORVISITOR_H
-#define IOPERATORVISITOR_H
+#ifndef ABSTRACTOPERATORVISITOR_H
+#define ABSTRACTOPERATORVISITOR_H
 
 namespace BitWise
 {
@@ -17,10 +17,10 @@ class Sum;
 class Substract;
 class Division;
 class Multiplication;
-class IOperatorVisitor
+class AbstractOperatorVisitor
 {
 public:
-    constexpr IOperatorVisitor() noexcept = default;
+    constexpr AbstractOperatorVisitor() noexcept = default;
     virtual void visiteOperator(const BitWise::Or &) = undefined;
     virtual void visiteOperator(const Logic::Or &) = undefined;
     virtual void visiteOperator(const BitWise::And &) = undefined;
@@ -33,4 +33,4 @@ public:
     virtual void visiteOperator(const Division &) = undefined;
 };
 
-#endif // IOPERATORVISITOR_H
+#endif // ABSTRACTOPERATORVISITOR_H

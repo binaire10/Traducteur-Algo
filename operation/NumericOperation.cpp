@@ -1,24 +1,20 @@
 #include "NumericOperation.h"
-#include "../type/CommonScalar.h"
-#include "../type/CommonNumeric.h"
+#include "../type/ScalarDataType.h"
 
-AbstractDataType NumericOperation::result(const IParameters &arg) const
+std::shared_ptr<AbstractDataType> NumericOperation::result(const IParameters &arg) const
 {
     if(arg.size() != 2)
         throw std::runtime_error("bad argument count into NumericOperation operation");
 
-    AbstractDataType a0 = arg.at(0);
-    AbstractDataType a1 = arg.at(1);
+    AbstractDataType &a0 = *arg.at(0).get();
+    AbstractDataType &a1 = *arg.at(1).get();
 
-    if(a0.instanceOf<CommonScalar>() && a1.instanceOf<CommonScalar>())
+    if(a0.instanceOf<ScalarDataType>() && a1.instanceOf<ScalarDataType>())
     {
-        if(a0.sizeType() < a1.sizeType())
+        if(a0.size() < a1.size())
             return arg.at(1);
-        else if(a0.sizeType() == a1.sizeType())
+        else if(a0.size() == a1.size())
         {
-            // check if we lose precision
-//            if(a0.instanceOf<Numeric>() && a1.instanceOf<Numeric>())
-//            {}
             return arg.at(1);
         }
         else
@@ -29,5 +25,5 @@ AbstractDataType NumericOperation::result(const IParameters &arg) const
 
 bool NumericOperation::matchArguments(const IParameters &arg) const noexcept
 {
-    return arg.size() != 2 && arg.at(0).instanceOf<CommonScalar>() && arg.at(1).instanceOf<CommonScalar>();
+    return arg.size() != 2 && arg.at(0)->instanceOf<ScalarDataType>() && arg.at(1)->instanceOf<ScalarDataType>();
 }

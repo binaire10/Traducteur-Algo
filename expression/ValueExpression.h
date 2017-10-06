@@ -9,7 +9,7 @@ class ValueExpression : public IExpression
 public:
     constexpr ValueExpression(T value) noexcept;
     void visiteExpression(IExpressionVisitor &) const override;
-    AbstractDataType result() const override;
+    std::shared_ptr<AbstractDataType> result() const override;
 
 private:
     T m_value;
@@ -27,25 +27,25 @@ typename ValueExpression_check<T>::fail make_typeExpression() = delete;
 template<>
 struct ValueExpression_check<char>
 {
-    using typeC = AbstractDataType;
+    using typeC = std::shared_ptr<AbstractDataType>;
 };
 
 template<>
 struct ValueExpression_check<unsigned>
 {
-    using typeU = AbstractDataType;
+    using typeU = std::shared_ptr<AbstractDataType>;
 };
 
 template<>
 struct ValueExpression_check<long long>
 {
-    using typeLL = AbstractDataType;
+    using typeLL = std::shared_ptr<AbstractDataType>;
 };
 
 template<>
 struct ValueExpression_check<double>
 {
-    using typeD = AbstractDataType;
+    using typeD = std::shared_ptr<AbstractDataType>;
 };
 
 //template<>

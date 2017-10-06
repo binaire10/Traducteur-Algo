@@ -1,13 +1,13 @@
 #include "Division.h"
-#include "../interface/IOperationVisitor.h"
-#include "../interface/IOperatorVisitor.h"
+#include "../interface/AbstractOperationVisitor.h"
+#include "../interface/AbstractOperatorVisitor.h"
 
-void Division::visiteOperation(IOperationVisitor &v) const
+void Division::visiteOperation(AbstractOperationVisitor &v) const
 {
     v.visiteOperation(*this);
 }
 
-void Division::visiteOperator(IOperatorVisitor &v) const
+void Division::visiteOperator(AbstractOperatorVisitor &v) const
 {
     v.visiteOperator(*this);
 }

@@ -1,13 +1,13 @@
 #include "Multiplication.h"
-#include "../interface/IOperationVisitor.h"
-#include "../interface/IOperatorVisitor.h"
+#include "../interface/AbstractOperationVisitor.h"
+#include "../interface/AbstractOperatorVisitor.h"
 
-void Multiplication::visiteOperation(IOperationVisitor &v) const
+void Multiplication::visiteOperation(AbstractOperationVisitor &v) const
 {
     v.visiteOperation(*this);
 }
 
-void Multiplication::visiteOperator(IOperatorVisitor &v) const
+void Multiplication::visiteOperator(AbstractOperatorVisitor &v) const
 {
     v.visiteOperator(*this);
 }

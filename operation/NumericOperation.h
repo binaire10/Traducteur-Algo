@@ -1,9 +1,9 @@
 #ifndef NUMERICOPERATION_H
 #define NUMERICOPERATION_H
 
-#include "../interface/IOperator.h"
+#include "../interface/AbstractOperator.h"
 
-class NumericOperation : public IOperator
+class NumericOperation : public AbstractOperator
 {
 public:
     constexpr NumericOperation() = default;

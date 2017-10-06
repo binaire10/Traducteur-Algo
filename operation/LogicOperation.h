@@ -1,9 +1,9 @@
 #ifndef LOGICOPERATION_H
 #define LOGICOPERATION_H
 
-#include "../interface/IOperator.h"
+#include "../interface/AbstractOperator.h"
 
-class LogicOperation : public IOperator
+class LogicOperation : public AbstractOperator
 {
 public:
     constexpr LogicOperation(std::size_t t) noexcept : m_parametersCount(t)

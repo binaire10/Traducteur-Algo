@@ -1,15 +1,12 @@
 #include <iostream>
 #include "Function.h"
-#include <type/CommonScalar.h>
 #include <limits>
-#include "type/CommonNumeric.h"
-#include "type/Character.h"
 #include <map>
-#include "type/TypeParameters.h"
 #include "type/AbstractDataType.h"
 #include "expression/Expression.h"
 #include "expression/ValueExpression.h"
 #include "operation/Sum.h"
+#include <vector>
 
 using namespace std;
 

@@ -14,14 +14,13 @@ HEADERS += \
     $$PWD/IOperatorVisitor.h \
     $$PWD/IOperatorVisitable.h \
     $$PWD/IFunction.h \
-    $$PWD/ICommonAbstractDataVisitable.h \
-    $$PWD/ICommonAbstractData.h \
-    $$PWD/ICommonAbstractDataVisitor.h \
     $$PWD/IAbstractDataTypeVisitor.h \
     $$PWD/IAbstractDataTypeVisitable.h \
     $$PWD/IParameters.h \
     $$PWD/IParametersVisitor.h \
-    $$PWD/IParametersVisitable.h
+    $$PWD/IParametersVisitable.h \
+    $$PWD/AbstractOperation.h \
+    $$PWD/AbstractOperator.h
 
 SOURCES += \
-    $$PWD/IArguments.cpp
+    $$PWD/IParameters.cpp

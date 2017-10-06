@@ -1,9 +1,9 @@
 #ifndef BITWISEOPERATION_H
 #define BITWISEOPERATION_H
 
-#include "../interface/IOperator.h"
+#include "../interface/AbstractOperator.h"
 
-class BitWiseOperation : public IOperator
+class BitWiseOperation : public AbstractOperator
 {
 public:
     constexpr BitWiseOperation(std::size_t i) noexcept;

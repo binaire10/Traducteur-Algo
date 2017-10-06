@@ -1,9 +1,10 @@
 #ifndef IPARAMETERS_H
 #define IPARAMETERS_H
 
+#include <memory>
 #include "IParametersVisitable.h"
-#include "../type/AbstractDataType.h"
 
+class AbstractDataType;
 class IParameters : public IParametersVisitable
 {
 public:
@@ -11,7 +12,9 @@ public:
     bool isConvertible(const IParameters &) const noexcept;
     bool equals(const IParameters &) const noexcept;
     virtual std::size_t size() const noexcept = undefined;
-    virtual AbstractDataType at(std::size_t) const = undefined;
+    virtual std::shared_ptr<AbstractDataType> at(std::size_t) const = undefined;
 };
+
+#include "../type/AbstractDataType.h"
 
 #endif // IPARAMETERS_H

@@ -15,11 +15,6 @@
 
 using namespace std;
 
-void testChar(const char & const c)
-{
-    return;
-}
-
 int main()
 {
 //    system("chcp 65001");

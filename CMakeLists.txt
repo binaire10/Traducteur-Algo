@@ -45,8 +45,6 @@ set(SOURCE_FILES
         operation/Substract.h
         operation/Sum.cpp
         operation/Sum.h
-        operator/SizeOfArray.cpp
-        operator/SizeOfArray.h
         type/AbstractDataType.cpp
         type/AbstractDataType.h
         type/AbstractDataTypeReference.cpp

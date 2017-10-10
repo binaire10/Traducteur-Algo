@@ -1,31 +1,50 @@
 #include "BitWiseOperation.h"
 #include "../type/ScalarDataType.h"
 
-std::shared_ptr<AbstractDataType> BitWiseOperation::result(const IParameters &arg) const
+std::shared_ptr<AbstractDataType> BitWiseOperation::result(const std::list<std::shared_ptr<Expressionable> > &arg) const
 {
     if(arg.size() != m_parametersCount)
         throw std::runtime_error("bad argument count into BitWiseOperation operation");
-//
+    //
     if(matchArguments(arg))
     {
-        std::shared_ptr<AbstractDataType> Data = arg.at(0);
-        for(std::size_t i(1) ; i < m_parametersCount ; ++i)
-            if(Data->size() < arg.at(i)->size())
-                Data = arg.at(i);
+        std::shared_ptr<AbstractDataType> Data = arg.front()->result();
+        std::shared_ptr<AbstractDataType> cData;
+        for(const auto &i : arg)
+            if(Data->size() < (cData = i->result())->size())
+                Data = cData;
         return Data;
     }
     throw std::runtime_error("BitWiseOperation operation requier scalar argument");
 }
 
-bool BitWiseOperation::matchArguments(const IParameters &arg) const noexcept
+bool BitWiseOperation::matchArguments(const std::list<std::shared_ptr<AbstractDataType> > &arg) const noexcept
 {
     if(arg.size() == m_parametersCount)
     {
-        for(std::size_t i(0) ; i < m_parametersCount ; ++i)
-            if(!arg.at(0)->instanceOf<ScalarDataType>())
+        for(const auto &i : arg)
+            if(!i->instanceOf<ScalarDataType>())
                 return false;
     }
     else
         return false;
     return true;
+}
+
+bool BitWiseOperation::matchArguments(const std::list<std::shared_ptr<Expressionable> > &arg) const
+{
+    if(arg.size() == m_parametersCount)
+    {
+        for(const auto &i : arg)
+            if(!i->result()->instanceOf<ScalarDataType>())
+                return false;
+    }
+    else
+        return false;
+    return true;
+}
+
+Expressionable::value_cast BitWiseOperation::castValueOfResult() const noexcept
+{
+    return Expressionable::prvalue;
 }

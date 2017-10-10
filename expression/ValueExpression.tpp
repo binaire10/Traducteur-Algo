@@ -71,5 +71,11 @@ std::shared_ptr<AbstractDataType> ValueExpression<T>::result() const
     return make_typeExpression<T>();
 }
 
+template<typename T>
+Expressionable::value_cast ValueExpression<T>::resultValueCast() const noexcept
+{
+    return Expressionable::prvalue;
+}
+
 
 #endif // VALUEEXPRESSION_TPP

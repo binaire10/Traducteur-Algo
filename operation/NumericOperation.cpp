@@ -1,29 +1,39 @@
 #include "NumericOperation.h"
 #include "../type/ScalarDataType.h"
 
-std::shared_ptr<AbstractDataType> NumericOperation::result(const IParameters &arg) const
+std::shared_ptr<AbstractDataType> NumericOperation::result(const std::list<std::shared_ptr<Expressionable> > &arg) const
 {
     if(arg.size() != 2)
         throw std::runtime_error("bad argument count into NumericOperation operation");
 
-    AbstractDataType &a0 = *arg.at(0).get();
-    AbstractDataType &a1 = *arg.at(1).get();
+    std::shared_ptr<AbstractDataType> a0 = arg.front()->result();
+    std::shared_ptr<AbstractDataType> a1 = arg.back()->result();
 
-    if(a0.instanceOf<ScalarDataType>() && a1.instanceOf<ScalarDataType>())
+    if(a0->instanceOf<ScalarDataType>() && a1->instanceOf<ScalarDataType>())
     {
-        if(a0.size() < a1.size())
-            return arg.at(1);
-        else if(a0.size() == a1.size())
+        if(a0->size() < a1->size())
+            return a1;
+        else if(a0->size() == a1->size())
         {
-            return arg.at(1);
+            return a1;
         }
         else
-            return arg.at(0);
+            return a0;
     }
     throw std::runtime_error("NumericOperation operation requier scalar argument");
 }
 
-bool NumericOperation::matchArguments(const IParameters &arg) const noexcept
+bool NumericOperation::matchArguments(const std::list<std::shared_ptr<AbstractDataType>> &arg) const noexcept
 {
-    return arg.size() != 2 && arg.at(0)->instanceOf<ScalarDataType>() && arg.at(1)->instanceOf<ScalarDataType>();
+    return arg.size() != 2 && arg.front()->instanceOf<ScalarDataType>() && arg.back()->instanceOf<ScalarDataType>();
+}
+
+bool NumericOperation::matchArguments(const std::list<std::shared_ptr<Expressionable> > &arg) const
+{
+    return arg.size() != 2 && arg.front()->result()->instanceOf<ScalarDataType>() && arg.back()->result()->instanceOf<ScalarDataType>();
+}
+
+Expressionable::value_cast NumericOperation::castValueOfResult() const noexcept
+{
+    return Expressionable::prvalue;
 }

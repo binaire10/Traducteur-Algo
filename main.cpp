@@ -9,27 +9,27 @@
 #include "type/NumericDataType.h"
 #include "expression/Expression.h"
 #include "expression/ValueExpression.h"
+#include "type/ParametersUtility.h"
 
 using namespace std;
 
 int main()
-{/*
+{
 //    system("chcp 65001");
-    TypeParameters arg({AbstractDataType(CommonNumeric::getInstance(CommonNumeric::Type::Short)),
-                      AbstractDataType(CommonNumeric::getInstance(CommonNumeric::Type::Short))});
-*/
-    ArgumentExpression arg2({ std::make_shared<ValueExpression<long long>>(5),
-                        std::make_shared<ValueExpression<double>>(5)});
-    Expression exp(Sum::getInstance(), std::make_shared<ArgumentExpression>(arg2));
+    std::list<std::shared_ptr<AbstractDataType>> arg({NumericDataType::getInstance(NumericDataType::Type::Short),
+                      NumericDataType::getInstance(NumericDataType::Type::Short)});
+
+    Expression exp(Sum::getInstance(), { std::make_shared<ValueExpression<long long>>(5),
+                                         std::make_shared<ValueExpression<double>>(5)});
 
 //    ValueExpression<std::string> val5("test");
 
     cout << boolalpha;
     cout << "Hello wordl !" << endl;
-/*
-    cout << arg.equals(arg2) << endl;
-    cout << arg.isConvertible(arg2) << endl;
-*/
+
+    cout << isEquals(arg, exp.arguments()) << endl;
+    cout << isConvertibles(arg, exp.arguments()) << endl;
+
     std::shared_ptr<AbstractDataType> test(NumericDataType::getInstance(NumericDataType::Type::Short));
     cout << test->instanceOf<ScalarDataType>() << endl;
     cout << test->instanceOf<NumericDataType>() << endl;

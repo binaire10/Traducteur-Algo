@@ -4,7 +4,9 @@ HEADERS += \
     $$PWD/NumericDataType.h \
     $$PWD/DecimalDataType.h \
     $$PWD/Character.h \
-    $$PWD/ParametersUtility.h
+    $$PWD/ParametersUtility.h \
+    $$PWD/ConstAbstractDataType.h \
+    $$PWD/AbstractDataTypeReference.h
 
 SOURCES += \
     $$PWD/ScalarDataType.cpp \
@@ -12,4 +14,6 @@ SOURCES += \
     $$PWD/DecimalDataType.cpp \
     $$PWD/Character.cpp \
     $$PWD/ParametersUtility.cpp \
-    $$PWD/AbstractDataType.cpp
+    $$PWD/AbstractDataType.cpp \
+    $$PWD/ConstAbstractDataType.cpp \
+    $$PWD/AbstractDataTypeReference.cpp

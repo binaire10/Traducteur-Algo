@@ -10,8 +10,15 @@
 #include "expression/Expression.h"
 #include "expression/ValueExpression.h"
 #include "type/ParametersUtility.h"
+#include "type/ConstAbstractDataType.h"
+#include "type/AbstractDataTypeReference.h"
 
 using namespace std;
+
+void testChar(const char & const c)
+{
+    return;
+}
 
 int main()
 {
@@ -36,6 +43,14 @@ int main()
     cout << test->instanceOf<Character>() << endl;
     cout << "0x" << hex << setfill('0') << setw(sizeof(std::size_t)*2)<< exp.result()->hash() << endl;
     cout << "Hello world!" << endl;
+
+    try {
+        std::make_shared<AbstractDataTypeReference>(std::make_shared<ConstAbstractDataType>(NumericDataType::getInstance(NumericDataType::Type::Short)));
+    }
+    catch(const std::runtime_error &e)
+    {
+        cerr << "std::runtime_error " << e.what() << endl;
+    }
 
     return 0;
 }

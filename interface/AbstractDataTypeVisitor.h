@@ -4,6 +4,8 @@
 class Character;
 class NumericDataType;
 class DecimalDataType;
+class ConstAbstractDataType;
+class AbstractDataTypeReference;
 class AbstractDataTypeVisitor
 {
 public:
@@ -11,6 +13,8 @@ public:
     virtual void visiteType(const DecimalDataType &) = undefined;
     virtual void visiteType(const NumericDataType &) = undefined;
     virtual void visiteType(const Character &) = undefined;
+    virtual void visiteType(const ConstAbstractDataType &) = undefined;
+    virtual void visiteType(const AbstractDataTypeReference &) = undefined;
 };
 
 #endif // IABSTRACTDATATYPEVISITOR_H

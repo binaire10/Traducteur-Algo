@@ -16,7 +16,7 @@ bool isConvertibles(const std::list<std::shared_ptr<AbstractDataType> > &paramet
     return true;
 }
 
-bool isEquals(const std::list<std::shared_ptr<AbstractDataType> > &parametersType, const std::list<std::shared_ptr<Expressionable> > &expressionArguments)
+bool isEquals(const std::list<std::shared_ptr<AbstractDataType>> &parametersType, const std::list<std::shared_ptr<Expressionable>> &expressionArguments)
 {
     if(parametersType.size() != expressionArguments.size())
         return false;

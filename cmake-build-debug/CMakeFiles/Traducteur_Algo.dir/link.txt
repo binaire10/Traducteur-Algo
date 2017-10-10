@@ -1,3 +1,0 @@
-"D:\IDE\CLion 2017.2.3\bin\cmake\bin\cmake.exe" -E remove -f CMakeFiles\Traducteur_Algo.dir/objects.a
-D:\msys64\mingw64\bin\ar.exe cr CMakeFiles\Traducteur_Algo.dir/objects.a @CMakeFiles\Traducteur_Algo.dir\objects1.rsp
-D:\msys64\mingw64\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\Traducteur_Algo.dir/objects.a -Wl,--no-whole-archive  -o Traducteur_Algo.exe -Wl,--out-implib,libTraducteur_Algo.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Traducteur_Algo.dir\linklibs.rsp

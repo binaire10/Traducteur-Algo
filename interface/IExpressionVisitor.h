@@ -6,6 +6,7 @@
 template<typename>
 class ValueExpression;
 class Expression;
+class Variable;
 class IExpressionVisitor
 {
 public:
@@ -20,6 +21,7 @@ public:
 //    virtual void visiteExpression(const ValueExpression<unsigned long long> &) = undefined;
 //    virtual void visiteExpression(const ValueExpression<unsigned short> &) = undefined;
     virtual void visiteExpression(const ValueExpression<double> &) = undefined;
+    virtual void visiteExpression(const Variable &) = undefined;
 };
 
 #endif // IEXPRESSIONVISITOR_H

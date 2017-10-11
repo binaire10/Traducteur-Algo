@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.8)
+cmake_minimum_required(VERSION 3.0)
 project(Traducteur_Algo)
 
 add_definitions(-Dundefined=0)
@@ -63,8 +63,6 @@ set(SOURCE_FILES
         type/ScalarDataType.h
         Function.h
         main.cpp
-        expression/VariableExpression.cpp
-        expression/VariableExpression.h
         variable/Variable.cpp
         variable/Variable.h)
 

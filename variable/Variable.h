@@ -3,15 +3,21 @@
 
 #include <memory>
 #include <string>
+#include "../interface/Expressionable.h"
 #include "../type/AbstractDataType.h"
 
-class Variable
+class Variable : public Expressionable
 {
 public:
     Variable(const std::string &name, const std::shared_ptr<AbstractDataType> &variable);
+    std::string name() const noexcept;
+    std::shared_ptr<AbstractDataType> type() const noexcept;
+    void visiteExpression(IExpressionVisitor &) const override;
+    std::shared_ptr<AbstractDataType> result() const override;
+    value_cast resultValueCast() const noexcept override;
 
 private:
-    std::string m_name;
+    const std::string m_name;
     std::shared_ptr<AbstractDataType> m_type;
 };
 

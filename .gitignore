@@ -1,6 +1,6 @@
 # Project File
-*.pro.user
-*.pro.user.*
+*.user
+*.user.*
 
 # Compiled Object files
 *.slo
@@ -35,4 +35,3 @@
 /.idea
 /cmake-build-debug
 /cmake-build-release
-*.user

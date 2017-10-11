@@ -1,6 +1,5 @@
 #include "Sum.h"
 #include "../interface/AbstractOperationVisitor.h"
-#include "../interface/AbstractOperatorVisitor.h"
 
 std::shared_ptr<Sum> Sum::getInstance() noexcept
 {
@@ -11,9 +10,4 @@ std::shared_ptr<Sum> Sum::getInstance() noexcept
 void Sum::visiteOperation(AbstractOperationVisitor &v) const
 {
     v.visiteOperation(*this);
-}
-
-void Sum::visiteOperator(AbstractOperatorVisitor &v) const
-{
-    v.visiteOperator(*this);
 }

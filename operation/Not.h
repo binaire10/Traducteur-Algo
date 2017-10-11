@@ -11,7 +11,6 @@ namespace BitWise
     public:
         static std::shared_ptr<Not> getInstance() noexcept;
         void visiteOperation(AbstractOperationVisitor &) const override;
-        void visiteOperator(AbstractOperatorVisitor &) const override;
 
     protected:
         constexpr Not() noexcept : BitWiseOperation(1)
@@ -25,7 +24,6 @@ namespace Logic
     public:
         static std::shared_ptr<Not> getInstance() noexcept;
         void visiteOperation(AbstractOperationVisitor &) const override;
-        void visiteOperator(AbstractOperatorVisitor &) const override;
 
     protected:
         constexpr Not() noexcept : LogicOperation(1)

@@ -8,7 +8,6 @@ class Multiplication : public NumericOperation
 public:
     static std::shared_ptr<Multiplication> getInstance() noexcept;
     void visiteOperation(AbstractOperationVisitor &) const override;
-    void visiteOperator(AbstractOperatorVisitor &) const override;
 
 protected:
     constexpr Multiplication() = default;

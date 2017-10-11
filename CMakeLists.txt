@@ -18,8 +18,6 @@ set(SOURCE_FILES
         interface/AbstractDataTypeVisitor.h
         interface/AbstractOperation.h
         interface/AbstractOperationVisitor.h
-        interface/AbstractOperator.h
-        interface/AbstractOperatorVisitor.h
         interface/Expressionable.h
         interface/IExpressionVisitable.h
         interface/IExpressionVisitor.h

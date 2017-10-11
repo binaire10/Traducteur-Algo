@@ -1,5 +1,5 @@
-#ifndef IABSTRACTDATATYPEVISITOR_H
-#define IABSTRACTDATATYPEVISITOR_H
+#ifndef ABSTRACTDATATYPEVISITOR_H
+#define ABSTRACTDATATYPEVISITOR_H
 
 class Character;
 class NumericDataType;
@@ -17,4 +17,4 @@ public:
     virtual void visiteType(const AbstractDataTypeReference &) = undefined;
 };
 
-#endif // IABSTRACTDATATYPEVISITOR_H
+#endif // ABSTRACTDATATYPEVISITOR_H

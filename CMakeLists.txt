@@ -62,6 +62,10 @@ set(SOURCE_FILES
         type/ScalarDataType.cpp
         type/ScalarDataType.h
         Function.h
-        main.cpp)
+        main.cpp
+        expression/VariableExpression.cpp
+        expression/VariableExpression.h
+        variable/Variable.cpp
+        variable/Variable.h)
 
 add_executable(Traducteur_Algo ${SOURCE_FILES})

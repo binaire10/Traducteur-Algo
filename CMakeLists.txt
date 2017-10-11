@@ -5,6 +5,10 @@ add_definitions(-Dundefined=0)
 
 set(CMAKE_CXX_STANDARD 17)
 
+if (UNIX AND NOT APPLE)
+    set(CMAKE_EXE_LINKER_FLAGS "-static-libgcc -static-libstdc++")
+endif ()
+
 set(SOURCE_FILES
         expression/Expression.cpp
         expression/Expression.h

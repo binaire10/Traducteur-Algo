@@ -1,0 +1,10 @@
+abstract class AbstractDataType {
+    {abstract} + equals(value : AbstractDataType) : bool
+    {abstract} + isConvertible(value : AbstractDataType) : bool
+    {abstract} + visiteType(visite : AbstractDataTypeVisitor)
+    + instanceOf<T>(visite : AbstractDataTypeVisitor)
+    + hash() : std::size_t
+    + size() : std::size_t
+    - m_hash : std::size_t
+    - m_size : std::size_t
+}

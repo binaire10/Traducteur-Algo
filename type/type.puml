@@ -1,0 +1,18 @@
+@startuml
+!include AbstractDataType.iuml
+!include AbstractDataTypeReference.iuml
+!include ConstAbstractDataType.iuml
+!include ScalarDataType.iuml
+!include Character.iuml
+!include NumericDataType.iuml
+!include DecimalDataType.iuml
+
+ConstAbstractDataType o-- AbstractDataType
+AbstractDataTypeReference o-- AbstractDataType
+AbstractDataType <|--ScalarDataType
+AbstractDataType <|--ConstAbstractDataType
+AbstractDataType <|--AbstractDataTypeReference
+ScalarDataType <|-- Character
+ScalarDataType <|-- NumericDataType
+ScalarDataType <|-- DecimalDataType
+@enduml

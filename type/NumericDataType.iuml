@@ -1,0 +1,10 @@
+enum NumericDataType::Type {
+    Boolean,
+    Short, Unsigned_Short,
+    Int, Unsigned,
+    LongLong, Unsigned_LongLong,
+    Float, Double
+}
+class NumericDataType {
+    {static} + getInstance(cast : NumericDataType::Type)
+}

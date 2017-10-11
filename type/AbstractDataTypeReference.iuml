@@ -1,0 +1,3 @@
+class AbstractDataTypeReference {
+    internalType() : AbstractDataType
+}

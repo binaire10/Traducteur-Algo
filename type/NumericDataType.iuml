@@ -5,6 +5,6 @@ enum NumericDataType::Type {
     LongLong, Unsigned_LongLong,
     Float, Double
 }
-class NumericDataType {
+class NumericDataType<<final>> {
     {static} + getInstance(cast : NumericDataType::Type)
 }

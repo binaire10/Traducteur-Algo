@@ -1,8 +1,8 @@
 @startuml
     !include AbstractDataType.iuml
     !include AbstractDataTypeReference.iuml
-    !include ConstAbstractDataType.iuml
     !include ScalarDataType.iuml
+    !include ConstAbstractDataType.iuml
     !include Character.iuml
     !include NumericDataType.iuml
     !include DecimalDataType.iuml

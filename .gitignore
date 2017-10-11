@@ -1,6 +1,10 @@
 # Project File
 *.user
 *.user.*
+*.autosave
+/.idea
+/cmake-build-debug
+/cmake-build-release
 
 # Compiled Object files
 *.slo
@@ -31,7 +35,3 @@
 *.exe
 *.out
 *.app
-*.autosave
-/.idea
-/cmake-build-debug
-/cmake-build-release

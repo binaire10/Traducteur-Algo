@@ -14,7 +14,6 @@ std::shared_ptr<AbstractDataType> Variable::type() const noexcept
     return m_type;
 }
 
-
 void Variable::visiteExpression(IExpressionVisitor &visitor) const
 {
     visitor.visiteExpression(*this);

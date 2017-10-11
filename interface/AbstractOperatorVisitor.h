@@ -17,7 +17,6 @@ class Sum;
 class Substract;
 class Division;
 class Multiplication;
-class SizeOfArray;
 class AbstractOperatorVisitor
 {
 public:
@@ -32,7 +31,6 @@ public:
     virtual void visiteOperator(const Substract &) = undefined;
     virtual void visiteOperator(const Multiplication &) = undefined;
     virtual void visiteOperator(const Division &) = undefined;
-    virtual void visiteOperator(const SizeOfArray &) = undefined;
 };
 
 #endif // ABSTRACTOPERATORVISITOR_H

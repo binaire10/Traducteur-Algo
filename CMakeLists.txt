@@ -66,6 +66,16 @@ set(SOURCE_FILES
         Function.h
         main.cpp
         variable/Variable.cpp
-        variable/Variable.h)
+        variable/Variable.h
+        exception/BadCastParameters.cpp
+        exception/BadCastParameters.h
+        exception/InvalidExpression.cpp
+        exception/InvalidExpression.h
+        exception/TraductorException.cpp
+        exception/TraductorException.h
+        exception/ParametersCount.cpp
+        exception/ParametersCount.h
+        exception/BadModificator.cpp
+        exception/BadModificator.h)
 
 add_executable(Traducteur_Algo ${SOURCE_FILES})

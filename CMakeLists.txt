@@ -76,6 +76,16 @@ set(SOURCE_FILES
         exception/ParametersCount.cpp
         exception/ParametersCount.h
         exception/BadModificator.cpp
-        exception/BadModificator.h)
+        exception/BadModificator.h
+        instruction/Conditional.cpp
+        instruction/Conditional.h
+        instruction/Loop.cpp
+        instruction/Loop.h
+        instruction/BreakLoop.cpp
+        instruction/BreakLoop.h
+        instruction/NextLoop.cpp
+        instruction/NextLoop.h
+        instruction/ForLoop.cpp
+        instruction/ForLoop.h)
 
 add_executable(Traducteur_Algo ${SOURCE_FILES})

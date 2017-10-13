@@ -2,13 +2,14 @@
 #include <map>
 #include "ConstAbstractDataType.h"
 #include "../interface/AbstractDataTypeVisitor.h"
+#include "../exception/BadModificator.h"
 
 AbstractDataTypeReference::AbstractDataTypeReference(const std::shared_ptr<AbstractDataType> &internalType) : AbstractDataType(std::hash<std::string>()("AbstractDataTypeReference"), internalType->size()), m_internalType(internalType)
 {
     if(m_internalType->instanceOf<AbstractDataTypeReference>())
-        throw std::runtime_error("modificator cannot be applied on reference type");
+        throw BadModificator("modificator cannot be applied on reference type");
     if(m_internalType->instanceOf<ConstAbstractDataType>())
-        throw std::runtime_error("modificator cannot be applied on const type");
+        throw BadModificator("modificator cannot be applied on const type");
 }
 
 bool AbstractDataTypeReference::equals(const AbstractDataType &c) const noexcept

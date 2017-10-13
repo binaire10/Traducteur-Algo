@@ -2,6 +2,7 @@
 #include "AbstractDataTypeReference.h"
 #include <map>
 #include <cassert>
+#include "../exception/BadModificator.h"
 
 namespace
 {
@@ -17,7 +18,7 @@ namespace
 ConstAbstractDataType::ConstAbstractDataType(const std::shared_ptr<AbstractDataType> &internalType) : AbstractDataType(std::hash<std::string>()("ConstAbstractDataType") ^ (internalType->hash() << 1), internalType->size()), m_internalType(internalType)
 {
     if(m_internalType->instanceOf<ConstAbstractDataType>())
-        throw std::runtime_error("const cannot be applied on const type");
+        throw BadModificator("const cannot be applied on const type");
 }
 
 bool ConstAbstractDataType::equals(const AbstractDataType &c) const noexcept

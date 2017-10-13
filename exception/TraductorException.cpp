@@ -21,3 +21,6 @@ const std::string &TraductorException::file() const
 {
     return m_file;
 }
+
+TraductorException::TraductorException(size_t line, const std::string &file, const TraductorException &upgrade) : m_line(line), m_file(file), m_msg(upgrade.m_msg)
+{}

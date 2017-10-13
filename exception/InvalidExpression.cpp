@@ -5,3 +5,6 @@ InvalidExpression::InvalidExpression(size_t line, const std::string &file, const
 
 InvalidExpression::InvalidExpression(const std::string &msg) : TraductorException(msg)
 {}
+
+InvalidExpression::InvalidExpression(size_t line, const std::string &file, const InvalidExpression &upgrade) : TraductorException(line, file, upgrade)
+{}

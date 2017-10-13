@@ -5,3 +5,6 @@ BadCastParameters::BadCastParameters(size_t line, const std::string &file, const
 
 BadCastParameters::BadCastParameters(const std::string &msg) : TraductorException(msg)
 {}
+
+BadCastParameters::BadCastParameters(size_t line, const std::string &file, const BadCastParameters &upgrade) : TraductorException(line, file, upgrade)
+{}

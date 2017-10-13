@@ -12,6 +12,7 @@
 #include "type/ParametersUtility.h"
 #include "type/ConstAbstractDataType.h"
 #include "type/AbstractDataTypeReference.h"
+#include "exception/BadModificator.h"
 
 using namespace std;
 
@@ -42,9 +43,9 @@ int main()
     try {
         std::make_shared<AbstractDataTypeReference>(std::make_shared<ConstAbstractDataType>(NumericDataType::getInstance(NumericDataType::Type::Short)));
     }
-    catch(const std::runtime_error &e)
+    catch(const BadModificator &e)
     {
-        cerr << "std::runtime_error " << e.what() << endl;
+        cerr << "BadModificator " << e.what() << endl;
     }
 
     return 0;

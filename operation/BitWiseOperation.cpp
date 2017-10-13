@@ -1,10 +1,12 @@
 #include "BitWiseOperation.h"
 #include "../type/ScalarDataType.h"
+#include "../exception/BadCastParameters.h"
+#include "../exception/ParametersCount.h"
 
 std::shared_ptr<AbstractDataType> BitWiseOperation::result(const std::list<std::shared_ptr<Expressionable> > &arg) const
 {
     if(arg.size() != m_parametersCount)
-        throw std::runtime_error("bad argument count into BitWiseOperation operation");
+        throw ParametersCount("bad argument count into BitWiseOperation operation");
     //
     if(matchArguments(arg))
     {
@@ -15,7 +17,7 @@ std::shared_ptr<AbstractDataType> BitWiseOperation::result(const std::list<std::
                 Data = cData;
         return Data;
     }
-    throw std::runtime_error("BitWiseOperation operation requier scalar argument");
+    throw BadCastParameters("BitWiseOperation operation requier scalar argument");
 }
 
 bool BitWiseOperation::matchArguments(const std::list<std::shared_ptr<AbstractDataType> > &arg) const noexcept

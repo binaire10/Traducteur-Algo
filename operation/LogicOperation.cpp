@@ -1,14 +1,16 @@
 #include "LogicOperation.h"
 #include "../type/NumericDataType.h"
+#include "../exception/BadCastParameters.h"
+#include "../exception/ParametersCount.h"
 
 std::shared_ptr<AbstractDataType> LogicOperation::result(const std::list<std::shared_ptr<Expressionable> > &arg) const
 {
     if(arg.size() != 2)
-        throw std::runtime_error("bad argument count into LogicOperation operation");
+        throw ParametersCount("bad argument count into LogicOperation operation");
 
     if(matchArguments(arg))
         return NumericDataType::getInstance(NumericDataType::Type::Boolean);
-    throw std::runtime_error("LogicOperation operation requier scalar argument");
+    throw BadCastParameters("LogicOperation operation requier scalar argument");
 }
 
 bool LogicOperation::matchArguments(const std::list<std::shared_ptr<Expressionable> > &arg) const

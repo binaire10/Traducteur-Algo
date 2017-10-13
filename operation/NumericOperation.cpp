@@ -1,10 +1,12 @@
 #include "NumericOperation.h"
 #include "../type/ScalarDataType.h"
+#include "../exception/BadCastParameters.h"
+#include "../exception/ParametersCount.h"
 
 std::shared_ptr<AbstractDataType> NumericOperation::result(const std::list<std::shared_ptr<Expressionable> > &arg) const
 {
     if(arg.size() != 2)
-        throw std::runtime_error("bad argument count into NumericOperation operation");
+        throw ParametersCount("bad argument count into NumericOperation operation");
 
     std::shared_ptr<AbstractDataType> a0 = arg.front()->result();
     std::shared_ptr<AbstractDataType> a1 = arg.back()->result();
@@ -20,7 +22,7 @@ std::shared_ptr<AbstractDataType> NumericOperation::result(const std::list<std::
         else
             return a0;
     }
-    throw std::runtime_error("NumericOperation operation requier scalar argument");
+    throw BadCastParameters("NumericOperation operation requier scalar argument");
 }
 
 bool NumericOperation::matchArguments(const std::list<std::shared_ptr<AbstractDataType>> &arg) const noexcept

@@ -18,6 +18,7 @@ set(SOURCE_FILES
         instruction/InstructionBlock.h
         interface/AbstractDataTypeVisitor.h
         interface/AbstractOperation.h
+        interface/AbstractOperationMember.h
         interface/AbstractOperationVisitor.h
         interface/Expressionable.h
         interface/IExpressionVisitable.h

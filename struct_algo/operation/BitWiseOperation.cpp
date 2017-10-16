@@ -33,7 +33,7 @@ bool BitWiseOperation::matchArguments(const std::list<std::shared_ptr<AbstractDa
     return true;
 }
 
-bool BitWiseOperation::matchArguments(const std::list<std::shared_ptr<Expressionable> > &arg) const
+bool BitWiseOperation::matchArguments(const std::list<std::shared_ptr<Expressionable> > &arg) const noexcept
 {
     if(arg.size() == m_parametersCount)
     {

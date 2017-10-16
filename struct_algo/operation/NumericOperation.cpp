@@ -30,7 +30,7 @@ bool NumericOperation::matchArguments(const std::list<std::shared_ptr<AbstractDa
     return arg.size() != 2 && arg.front()->instanceOf<ScalarDataType>() && arg.back()->instanceOf<ScalarDataType>();
 }
 
-bool NumericOperation::matchArguments(const std::list<std::shared_ptr<Expressionable> > &arg) const
+bool NumericOperation::matchArguments(const std::list<std::shared_ptr<Expressionable> > &arg) const noexcept
 {
     return arg.size() != 2 && arg.front()->result()->instanceOf<ScalarDataType>() && arg.back()->result()->instanceOf<ScalarDataType>();
 }

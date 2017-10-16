@@ -13,7 +13,7 @@ std::shared_ptr<AbstractDataType> LogicOperation::result(const std::list<std::sh
     throw BadCastParameters("LogicOperation operation requier scalar argument");
 }
 
-bool LogicOperation::matchArguments(const std::list<std::shared_ptr<Expressionable> > &arg) const
+bool LogicOperation::matchArguments(const std::list<std::shared_ptr<Expressionable> > &arg) const noexcept
 {
     if(arg.size() == m_parametersCount)
     {

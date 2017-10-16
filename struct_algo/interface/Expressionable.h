@@ -3,8 +3,8 @@
 
 #include <memory>
 #include "IExpressionVisitable.h"
-#include "../type/AbstractDataType.h"
 
+class AbstractDataType;
 class Expressionable : public IExpressionVisitable
 {
 public:
@@ -23,5 +23,7 @@ public:
     virtual std::shared_ptr<AbstractDataType> result() const = undefined;
     virtual value_cast resultValueCast() const noexcept = undefined;
 };
+
+#include "../type/AbstractDataType.h"
 
 #endif // EXPRESSIONABLE_H

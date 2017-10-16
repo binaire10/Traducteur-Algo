@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0)
-project(Traducteur_Algo)
+project(struct_algo)
 
 add_definitions(-Dundefined=0)
 
@@ -92,5 +92,3 @@ set(SOURCE_FILES
         interface/LoopInstruction.cpp
         interface/LoopInstruction.h)
 add_library(struct_algo SHARED ${SOURCE_FILES})
-add_executable(Traducteur_Algo main.cpp)
-target_link_libraries(Traducteur_Algo struct_algo)

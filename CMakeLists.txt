@@ -6,6 +6,7 @@ add_definitions(-Dundefined=0)
 set(CMAKE_CXX_STANDARD 17)
 
 if (UNIX AND NOT APPLE)
+    set(CMAKE_SHARED_LINKER_FLAGS "-static-libgcc -static-libstdc++")
     set(CMAKE_EXE_LINKER_FLAGS "-static-libgcc -static-libstdc++")
 endif ()
 
@@ -64,7 +65,6 @@ set(SOURCE_FILES
         type/ScalarDataType.cpp
         type/ScalarDataType.h
         Function.h
-        main.cpp
         variable/Variable.cpp
         variable/Variable.h
         exception/BadCastParameters.cpp
@@ -91,5 +91,6 @@ set(SOURCE_FILES
         interface/Loopable.h
         interface/LoopInstruction.cpp
         interface/LoopInstruction.h)
-
-add_executable(Traducteur_Algo ${SOURCE_FILES})
+add_library(struct_algo SHARED ${SOURCE_FILES})
+add_executable(Traducteur_Algo main.cpp)
+target_link_libraries(Traducteur_Algo struct_algo)

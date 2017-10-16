@@ -30,6 +30,8 @@ set(SOURCE_FILES
         interface/Instructable.h
         operation/And.cpp
         operation/And.h
+        operation/Assign.cpp
+        operation/Assign.h
         operation/BitWiseOperation.cpp
         operation/BitWiseOperation.h
         operation/Division.cpp

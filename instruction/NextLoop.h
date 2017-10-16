@@ -1,11 +1,13 @@
 #ifndef TRADUCTEUR_ALGO_NEXTLOOP_H
 #define TRADUCTEUR_ALGO_NEXTLOOP_H
 
-#include "../interface/Instructable.h"
+#include "../interface/LoopInstruction.h"
 
-class NextLoop : public Instructable
+
+class NextLoop : public LoopInstruction
 {
 public:
+    NextLoop(const std::shared_ptr<Loopable> &loop) noexcept;
     void visiteInstruction(IInstructionVisitor &visitor) const override;
 };
 

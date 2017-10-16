@@ -7,12 +7,14 @@
 class TraductorException : public std::exception
 {
 public:
-    TraductorException(const std::string &msg) noexcept;
-    TraductorException(std::size_t line, const std::string &file, const std::string &msg) noexcept;
-    TraductorException(size_t line, const std::string &file, const TraductorException &upgrade);
     size_t line() const;
     const std::string &file() const;
     const char *what() const noexcept override;
+
+protected:
+    TraductorException(const std::string &msg) noexcept;
+    TraductorException(std::size_t line, const std::string &file, const std::string &msg) noexcept;
+    TraductorException(size_t line, const std::string &file, const TraductorException &upgrade) noexcept;
 
 private:
     std::size_t m_line;

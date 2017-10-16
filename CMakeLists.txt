@@ -86,6 +86,10 @@ set(SOURCE_FILES
         instruction/NextLoop.cpp
         instruction/NextLoop.h
         instruction/ForLoop.cpp
-        instruction/ForLoop.h)
+        instruction/ForLoop.h
+        interface/Loopable.cpp
+        interface/Loopable.h
+        interface/LoopInstruction.cpp
+        interface/LoopInstruction.h)
 
 add_executable(Traducteur_Algo ${SOURCE_FILES})

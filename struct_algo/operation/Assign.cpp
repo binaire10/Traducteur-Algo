@@ -13,8 +13,8 @@ bool Assign::matchArguments(const std::list<std::shared_ptr<AbstractDataType> > 
 bool Assign::matchArguments(const std::list<std::shared_ptr<Expressionable> > &argList) const noexcept
 {
     std::shared_ptr<Expressionable> lvalue(argList.front());
-    std::shared_ptr<Expressionable> rvalue(argList.back());
-    return argList.size() == 2 && lvalue->result()->equals(*rvalue->result()) && (lvalue->resultValueCast() & Expressionable::glvalue);
+    std::shared_ptr<AbstractDataType> rvalue(argList.back()->result());
+    return argList.size() == 2 && lvalue->result()->equals(*rvalue) && (lvalue->resultValueCast() & Expressionable::glvalue);
 }
 
 std::shared_ptr<AbstractDataType> Assign::result(const std::list<std::shared_ptr<Expressionable> > &argList) const

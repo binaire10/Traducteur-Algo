@@ -57,6 +57,8 @@ set(SOURCE_FILES
         type/AbstractDataTypeReference.h
         type/Character.cpp
         type/Character.h
+        type/ClassDataType.cpp
+        type/ClassDataType.h
         type/ConstAbstractDataType.cpp
         type/ConstAbstractDataType.h
         type/DecimalDataType.cpp

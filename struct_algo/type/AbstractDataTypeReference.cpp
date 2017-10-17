@@ -4,7 +4,7 @@
 #include "../interface/AbstractDataTypeVisitor.h"
 #include "../exception/BadModificator.h"
 
-AbstractDataTypeReference::AbstractDataTypeReference(const std::shared_ptr<AbstractDataType> &internalType) : AbstractDataType(std::hash<std::string>()("AbstractDataTypeReference"), internalType->size()), m_internalType(internalType)
+AbstractDataTypeReference::AbstractDataTypeReference(const std::shared_ptr<AbstractDataType> &internalType) : AbstractDataType(), m_internalType(internalType)
 {
     if(m_internalType->instanceOf<AbstractDataTypeReference>())
         throw BadModificator("modificator cannot be applied on reference type");

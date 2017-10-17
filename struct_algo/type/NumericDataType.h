@@ -7,45 +7,51 @@
 class NumericDataType : public ScalarDataType
 {
 public:
-    enum class Type
+    enum class NumericType
     {
         Boolean,
         Short, Unsigned_Short,
         Int, Unsigned,
-        LongLong, Unsigned_LongLong,
-        Float, Double
+        LongLong, Unsigned_LongLong
     };
 
-    static constexpr std::size_t sizeofType(Type t)
+    static constexpr ScalarDataType::Type toScalarType(NumericType t) noexcept
     {
         switch (t) {
-        case Type::Short:
-        case Type::Unsigned_Short:
-            return 2ull;
+        case NumericDataType::NumericType::Boolean:
+            return ScalarDataType::Type::Boolean;
             break;
-        case Type::Int:
-        case Type::Unsigned:
-        case Type::Float:
-            return 4ull;
+        case NumericDataType::NumericType::Unsigned_Short:
+            return ScalarDataType::Type::Unsigned_Short;
             break;
-        case Type::LongLong:
-        case Type::Unsigned_LongLong:
-        case Type::Double:
-            return 8ull;
+        case NumericDataType::NumericType::Short:
+            return ScalarDataType::Type::Short;
+            break;
+        case NumericDataType::NumericType::Int:
+            return ScalarDataType::Type::Int;
+            break;
+        case NumericDataType::NumericType::Unsigned:
+            return ScalarDataType::Type::Unsigned;
+            break;
+        case NumericDataType::NumericType::LongLong:
+            return ScalarDataType::Type::LongLong;
+            break;
+        case NumericDataType::NumericType::Unsigned_LongLong:
+            return ScalarDataType::Type::Unsigned_LongLong;
             break;
         default:
-            return 0ull;
             break;
         }
     }
 
-    static std::shared_ptr<NumericDataType> getInstance(Type) noexcept;
+    static std::shared_ptr<NumericDataType> getInstance(NumericType) noexcept;
     bool equals(const AbstractDataType &) const noexcept override;
     void visiteType(AbstractDataTypeVisitor &) const override;
+    NumericDataType::NumericType getType() const;
 
 protected:
-    NumericDataType(Type);
-    const Type m_type;
+    NumericDataType(NumericType);
+    const NumericType m_type;
 };
 
 #endif // NUMERICDATATYPE_H

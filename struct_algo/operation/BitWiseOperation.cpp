@@ -13,7 +13,7 @@ std::shared_ptr<AbstractDataType> BitWiseOperation::result(const std::list<std::
         std::shared_ptr<AbstractDataType> Data = arg.front()->result();
         std::shared_ptr<AbstractDataType> cData;
         for(const auto &i : arg)
-            if(Data->size() < (cData = i->result())->size())
+            if(!(cData = i->result())->isConvertible(*Data))
                 Data = cData;
         return Data;
     }

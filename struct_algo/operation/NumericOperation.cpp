@@ -13,14 +13,12 @@ std::shared_ptr<AbstractDataType> NumericOperation::result(const std::list<std::
 
     if(a0->instanceOf<ScalarDataType>() && a1->instanceOf<ScalarDataType>())
     {
-        if(a0->size() < a1->size())
+        if(a0->isConvertible(*a1))
             return a1;
-        else if(a0->size() == a1->size())
-        {
-            return a1;
-        }
-        else
+        else if(a1->isConvertible(*a0))
             return a0;
+        else
+            throw std::runtime_error("bad program here, ScalarDataType invalid");
     }
     throw BadCastParameters("NumericOperation operation requier scalar argument");
 }

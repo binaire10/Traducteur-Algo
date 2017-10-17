@@ -10,19 +10,19 @@
 template<typename T>
 inline typename ValueExpression_check<T>::typeLL make_typeExpression()
 {
-    return NumericDataType::getInstance(NumericDataType::Type::LongLong);
+    return NumericDataType::getInstance(NumericDataType::NumericType::LongLong);
 }
 
 template<typename T>
 inline typename ValueExpression_check<T>::typeU make_typeExpression()
 {
-    return NumericDataType::getInstance(NumericDataType::Type::Unsigned);
+    return NumericDataType::getInstance(NumericDataType::NumericType::Unsigned);
 }
 
 template<typename T>
 inline typename ValueExpression_check<T>::typeD make_typeExpression()
 {
-    return NumericDataType::getInstance(NumericDataType::Type::Double);
+    return DecimalDataType::getInstance();
 }
 
 template<typename T>

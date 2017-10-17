@@ -9,7 +9,7 @@ std::shared_ptr<AbstractDataType> LogicOperation::result(const std::list<std::sh
         throw ParametersCount("bad argument count into LogicOperation operation");
 
     if(matchArguments(arg))
-        return NumericDataType::getInstance(NumericDataType::Type::Boolean);
+        return NumericDataType::getInstance(NumericDataType::NumericType::Boolean);
     throw BadCastParameters("LogicOperation operation requier scalar argument");
 }
 

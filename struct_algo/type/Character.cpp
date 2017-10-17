@@ -1,7 +1,7 @@
 #include "Character.h"
 #include "../interface/AbstractDataTypeVisitor.h"
 
-Character::Character() : ScalarDataType(std::hash<std::string>()("Character"), 1)
+Character::Character() : ScalarDataType(ScalarDataType::Type::Char)
 {}
 
 bool Character::equals(const AbstractDataType &c) const noexcept

@@ -18,5 +18,5 @@ void DecimalDataType::visiteType(AbstractDataTypeVisitor &v) const
     v.visiteType(*this);
 }
 
-DecimalDataType::DecimalDataType() : ScalarDataType(std::hash<std::string>()("DecimalDataType"), 8)
+DecimalDataType::DecimalDataType() : ScalarDataType(ScalarDataType::Type::Double)
 {}

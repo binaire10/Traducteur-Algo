@@ -19,8 +19,8 @@ using namespace std;
 int main()
 {
 //    system("chcp 65001");
-    std::list<std::shared_ptr<AbstractDataType>> arg({NumericDataType::getInstance(NumericDataType::Type::Short),
-                      NumericDataType::getInstance(NumericDataType::Type::Short)});
+    std::list<std::shared_ptr<AbstractDataType>> arg({NumericDataType::getInstance(NumericDataType::NumericType::Short),
+                      NumericDataType::getInstance(NumericDataType::NumericType::Short)});
 
     Expression exp(Sum::getInstance(), { std::make_shared<ValueExpression<long long>>(5),
                                          std::make_shared<ValueExpression<double>>(5)});
@@ -33,15 +33,14 @@ int main()
     cout << isEquals(arg, exp.arguments()) << endl;
     cout << isConvertibles(arg, exp.arguments()) << endl;
 
-    std::shared_ptr<AbstractDataType> test(NumericDataType::getInstance(NumericDataType::Type::Short));
+    std::shared_ptr<AbstractDataType> test(NumericDataType::getInstance(NumericDataType::NumericType::Short));
     cout << test->instanceOf<ScalarDataType>() << endl;
     cout << test->instanceOf<NumericDataType>() << endl;
     cout << test->instanceOf<Character>() << endl;
-    cout << "0x" << hex << setfill('0') << setw(sizeof(std::size_t)*2)<< exp.result()->hash() << endl;
     cout << "Hello world!" << endl;
 
     try {
-        std::make_shared<AbstractDataTypeReference>(std::make_shared<ConstAbstractDataType>(NumericDataType::getInstance(NumericDataType::Type::Short)));
+        std::make_shared<AbstractDataTypeReference>(std::make_shared<ConstAbstractDataType>(NumericDataType::getInstance(NumericDataType::NumericType::Short)));
     }
     catch(const BadModificator &e)
     {

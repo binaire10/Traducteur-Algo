@@ -17,6 +17,7 @@ class Sum;
 class Substract;
 class Division;
 class Multiplication;
+class Assign;
 class AbstractOperationVisitor
 {
 public:
@@ -31,6 +32,7 @@ public:
     virtual void visiteOperation(const Substract &) = undefined;
     virtual void visiteOperation(const Multiplication &) = undefined;
     virtual void visiteOperation(const Division &) = undefined;
+    virtual void visiteOperation(const Assign &) = undefined;
 };
 
 #endif // ABSTRACTOPERATIONVISITOR_H

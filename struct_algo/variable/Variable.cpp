@@ -24,7 +24,7 @@ std::shared_ptr<AbstractDataType> Variable::result() const
     return m_type;
 }
 
-Expressionable::value_cast Variable::resultValueCast() const noexcept
+Expression::value_cast Variable::resultValueCast() const noexcept
 {
-    return Expressionable::lvalue;
+    return Expression::lvalue;
 }

@@ -2,21 +2,21 @@
 #define TRADUCTEUR_ALGO_FORLOOP_H
 
 #include <memory>
-#include "../interface/Instructable.h"
-#include "../interface/Expressionable.h"
+#include "../interface/Instruction.h"
+#include "../interface/Expression.h"
 #include "../interface/Loopable.h"
 
 class ForLoop : public Loopable
 {
 public:
-    ForLoop(const std::shared_ptr<Expressionable> &whileCondition, const std::shared_ptr<Instructable> &instruction, const std::shared_ptr<Instructable> &afterEachLoop) noexcept;
+    ForLoop(const std::shared_ptr<Expression> &whileCondition, const std::shared_ptr<Instruction> &instruction, const std::shared_ptr<Instruction> &afterEachLoop) noexcept;
     void visiteInstruction(IInstructionVisitor &visitor) const override;
-    std::shared_ptr<Expressionable> whileCondition() const;
-    std::shared_ptr<Instructable> afterEachLoop() const;
+    std::shared_ptr<Expression> whileCondition() const;
+    std::shared_ptr<Instruction> afterEachLoop() const;
 
 private:
-    std::shared_ptr<Expressionable> m_whileCondition;
-    std::shared_ptr<Instructable> m_afterEachLoop;
+    std::shared_ptr<Expression> m_whileCondition;
+    std::shared_ptr<Instruction> m_afterEachLoop;
 };
 
 #endif //TRADUCTEUR_ALGO_FORLOOP_H

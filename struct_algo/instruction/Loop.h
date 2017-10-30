@@ -2,13 +2,13 @@
 #define TRADUCTEUR_ALGO_LOOP_H
 
 #include <memory>
-#include "../interface/Instructable.h"
+#include "../interface/Instruction.h"
 #include "../interface/Loopable.h"
 
 class Loop : public Loopable
 {
 public:
-    Loop(const std::shared_ptr<Instructable> &instruction) noexcept;
+    Loop(const std::shared_ptr<Instruction> &instruction) noexcept;
     void visiteInstruction(IInstructionVisitor &visitor) const override;
 };
 

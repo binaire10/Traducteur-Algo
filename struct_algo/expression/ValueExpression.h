@@ -1,16 +1,16 @@
 #ifndef VALUEEXPRESSION_H
 #define VALUEEXPRESSION_H
 
-#include "../interface/Expressionable.h"
+#include "interface/Expression.h"
 
 template<typename T>
-class ValueExpression : public Expressionable
+class ValueExpression : public Expression
 {
 public:
     constexpr ValueExpression(T value) noexcept;
     void visiteExpression(IExpressionVisitor &) const override;
     std::shared_ptr<AbstractDataType> result() const override;
-    Expressionable::value_cast resultValueCast() const noexcept override;
+    Expression::value_cast resultValueCast() const noexcept override;
 
 private:
     T m_value;

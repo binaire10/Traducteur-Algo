@@ -11,8 +11,8 @@ if (UNIX AND NOT APPLE)
 endif ()
 
 set(SOURCE_FILES
-        expression/Expression.cpp
-        expression/Expression.h
+        expression/ExpressionNaire.cpp
+        expression/ExpressionNaire.h
         expression/ValueExpression.h
         instruction/InstructionBlock.cpp
         instruction/InstructionBlock.h
@@ -20,7 +20,7 @@ set(SOURCE_FILES
         interface/AbstractOperation.h
         interface/AbstractOperationMember.h
         interface/AbstractOperationVisitor.h
-        interface/Expressionable.h
+        interface/Expression.h
         interface/IExpressionVisitable.h
         interface/IExpressionVisitor.h
         interface/IFunction.h
@@ -28,7 +28,7 @@ set(SOURCE_FILES
         interface/IFunctionVisitor.h
         interface/IInstructionVisitable.h
         interface/IInstructionVisitor.h
-        interface/Instructable.h
+        interface/Instruction.h
         operation/And.cpp
         operation/And.h
         operation/Assign.cpp
@@ -96,4 +96,4 @@ set(SOURCE_FILES
         interface/Loopable.h
         interface/LoopInstruction.cpp
         interface/LoopInstruction.h)
-add_library(struct_algo SHARED ${SOURCE_FILES})
+add_library(struct_algo STATIC ${SOURCE_FILES})

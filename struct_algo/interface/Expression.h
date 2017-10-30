@@ -1,11 +1,11 @@
-#ifndef EXPRESSIONABLE_H
-#define EXPRESSIONABLE_H
+#ifndef EXPRESSION_H
+#define EXPRESSION_H
 
 #include <memory>
 #include "IExpressionVisitable.h"
 
 class AbstractDataType;
-class Expressionable : public IExpressionVisitable
+class Expression : public IExpressionVisitable
 {
 public:
     // https://stackoverflow.com/questions/3601602/what-are-rvalues-lvalues-xvalues-glvalues-and-prvalues
@@ -19,11 +19,11 @@ public:
         rvalue = prvalue | xvalue, // right value (http://en.cppreference.com/w/cpp/language/value_category#rvalue)
         glvalue = lvalue | xvalue, // generalized left value (http://en.cppreference.com/w/cpp/language/value_category#glvalue)
     };
-    constexpr Expressionable() noexcept = default;
+    constexpr Expression() noexcept = default;
     virtual std::shared_ptr<AbstractDataType> result() const = undefined;
     virtual value_cast resultValueCast() const noexcept = undefined;
 };
 
 #include "../type/AbstractDataType.h"
 
-#endif // EXPRESSIONABLE_H
+#endif // EXPRESSION_H

@@ -1,7 +1,7 @@
 #ifndef IINSTRUCTIONVISITOR_H
 #define IINSTRUCTIONVISITOR_H
 
-class Expression;
+class ExpressionNaire;
 class InstructionBlock;
 class NextLoop;
 class BreakLoop;
@@ -12,7 +12,7 @@ class IInstructionVisitor
 {
 public:
     constexpr IInstructionVisitor() noexcept = default;
-    virtual void visiteInstruction(const Expression &) = undefined;
+    virtual void visiteInstruction(const ExpressionNaire &) = undefined;
     virtual void visiteInstruction(const InstructionBlock &) = undefined;
     virtual void visiteInstruction(const NextLoop &) = undefined;
     virtual void visiteInstruction(const BreakLoop &) = undefined;

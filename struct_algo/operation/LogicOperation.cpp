@@ -3,7 +3,7 @@
 #include "../exception/BadCastParameters.h"
 #include "../exception/ParametersCount.h"
 
-std::shared_ptr<AbstractDataType> LogicOperation::result(const std::list<std::shared_ptr<Expressionable> > &arg) const
+std::shared_ptr<AbstractDataType> LogicOperation::result(const std::list<std::shared_ptr<Expression> > &arg) const
 {
     if(arg.size() != 2)
         throw ParametersCount("bad argument count into LogicOperation operation");
@@ -13,7 +13,7 @@ std::shared_ptr<AbstractDataType> LogicOperation::result(const std::list<std::sh
     throw BadCastParameters("LogicOperation operation requier scalar argument");
 }
 
-bool LogicOperation::matchArguments(const std::list<std::shared_ptr<Expressionable> > &arg) const noexcept
+bool LogicOperation::matchArguments(const std::list<std::shared_ptr<Expression> > &arg) const noexcept
 {
     if(arg.size() == m_parametersCount)
     {
@@ -39,7 +39,7 @@ bool LogicOperation::matchArguments(const std::list<std::shared_ptr<AbstractData
     return true;
 }
 
-Expressionable::value_cast LogicOperation::castValueOfResult() const noexcept
+Expression::value_cast LogicOperation::castValueOfResult() const noexcept
 {
-    return Expressionable::prvalue;
+    return Expression::prvalue;
 }

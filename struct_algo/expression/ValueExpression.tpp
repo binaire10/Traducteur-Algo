@@ -72,9 +72,9 @@ std::shared_ptr<AbstractDataType> ValueExpression<T>::result() const
 }
 
 template<typename T>
-Expressionable::value_cast ValueExpression<T>::resultValueCast() const noexcept
+Expression::value_cast ValueExpression<T>::resultValueCast() const noexcept
 {
-    return Expressionable::prvalue;
+    return Expression::prvalue;
 }
 
 

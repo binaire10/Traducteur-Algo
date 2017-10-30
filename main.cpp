@@ -7,7 +7,7 @@
 #include "operation/Sum.h"
 #include <vector>
 #include "type/NumericDataType.h"
-#include "expression/Expression.h"
+#include "expression/ExpressionNaire.h"
 #include "expression/ValueExpression.h"
 #include "type/ParametersUtility.h"
 #include "type/ConstAbstractDataType.h"
@@ -22,7 +22,7 @@ int main()
     std::list<std::shared_ptr<AbstractDataType>> arg({NumericDataType::getInstance(NumericDataType::NumericType::Short),
                       NumericDataType::getInstance(NumericDataType::NumericType::Short)});
 
-    Expression exp(Sum::getInstance(), { std::make_shared<ValueExpression<long long>>(5),
+    ExpressionNaire exp(Sum::getInstance(), { std::make_shared<ValueExpression<long long>>(5),
                                          std::make_shared<ValueExpression<double>>(5)});
 
 //    ValueExpression<std::string> val5("test");

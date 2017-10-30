@@ -2,10 +2,10 @@
 #define LOOPINSTRUCTION_H
 
 #include <memory>
-#include "Instructable.h"
+#include "Instruction.h"
 #include "Loopable.h"
 
-class LoopInstruction : public Instructable
+class LoopInstruction : public Instruction
 {
 public:
     LoopInstruction(const std::shared_ptr<Loopable> &loop) noexcept;

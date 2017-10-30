@@ -3,7 +3,7 @@
 #include "../exception/BadCastParameters.h"
 #include "../exception/ParametersCount.h"
 
-std::shared_ptr<AbstractDataType> NumericOperation::result(const std::list<std::shared_ptr<Expressionable> > &arg) const
+std::shared_ptr<AbstractDataType> NumericOperation::result(const std::list<std::shared_ptr<Expression> > &arg) const
 {
     if(arg.size() != 2)
         throw ParametersCount("bad argument count into NumericOperation operation");
@@ -28,12 +28,12 @@ bool NumericOperation::matchArguments(const std::list<std::shared_ptr<AbstractDa
     return arg.size() != 2 && arg.front()->instanceOf<ScalarDataType>() && arg.back()->instanceOf<ScalarDataType>();
 }
 
-bool NumericOperation::matchArguments(const std::list<std::shared_ptr<Expressionable> > &arg) const noexcept
+bool NumericOperation::matchArguments(const std::list<std::shared_ptr<Expression> > &arg) const noexcept
 {
     return arg.size() != 2 && arg.front()->result()->instanceOf<ScalarDataType>() && arg.back()->result()->instanceOf<ScalarDataType>();
 }
 
-Expressionable::value_cast NumericOperation::castValueOfResult() const noexcept
+Expression::value_cast NumericOperation::castValueOfResult() const noexcept
 {
-    return Expressionable::prvalue;
+    return Expression::prvalue;
 }

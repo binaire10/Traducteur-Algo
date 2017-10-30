@@ -7,10 +7,10 @@ class NumericOperation : public AbstractOperation
 {
 public:
     constexpr NumericOperation() = default;
-    std::shared_ptr<AbstractDataType> result(const std::list<std::shared_ptr<Expressionable>> &arg) const override;
+    std::shared_ptr<AbstractDataType> result(const std::list<std::shared_ptr<Expression>> &arg) const override;
     bool matchArguments(const std::list<std::shared_ptr<AbstractDataType>> &) const noexcept override;
-    bool matchArguments(const std::list<std::shared_ptr<Expressionable>> &) const noexcept override;
-    Expressionable::value_cast castValueOfResult() const noexcept override;
+    bool matchArguments(const std::list<std::shared_ptr<Expression>> &) const noexcept override;
+    Expression::value_cast castValueOfResult() const noexcept override;
 };
 
 #include "../type/AbstractDataType.h"

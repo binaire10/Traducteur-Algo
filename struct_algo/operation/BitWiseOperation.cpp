@@ -3,7 +3,7 @@
 #include "../exception/BadCastParameters.h"
 #include "../exception/ParametersCount.h"
 
-std::shared_ptr<AbstractDataType> BitWiseOperation::result(const std::list<std::shared_ptr<Expressionable> > &arg) const
+std::shared_ptr<AbstractDataType> BitWiseOperation::result(const std::list<std::shared_ptr<Expression> > &arg) const
 {
     if(arg.size() != m_parametersCount)
         throw ParametersCount("bad argument count into BitWiseOperation operation");
@@ -33,7 +33,7 @@ bool BitWiseOperation::matchArguments(const std::list<std::shared_ptr<AbstractDa
     return true;
 }
 
-bool BitWiseOperation::matchArguments(const std::list<std::shared_ptr<Expressionable> > &arg) const noexcept
+bool BitWiseOperation::matchArguments(const std::list<std::shared_ptr<Expression> > &arg) const noexcept
 {
     if(arg.size() == m_parametersCount)
     {
@@ -46,7 +46,7 @@ bool BitWiseOperation::matchArguments(const std::list<std::shared_ptr<Expression
     return true;
 }
 
-Expressionable::value_cast BitWiseOperation::castValueOfResult() const noexcept
+Expression::value_cast BitWiseOperation::castValueOfResult() const noexcept
 {
-    return Expressionable::prvalue;
+    return Expression::prvalue;
 }

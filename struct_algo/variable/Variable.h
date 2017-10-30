@@ -3,10 +3,10 @@
 
 #include <memory>
 #include <string>
-#include "../interface/Expressionable.h"
+#include "../interface/Expression.h"
 #include "../type/AbstractDataType.h"
 
-class Variable : public Expressionable
+class Variable : public Expression
 {
 public:
     Variable(const std::string &name, const std::shared_ptr<AbstractDataType> &variable);

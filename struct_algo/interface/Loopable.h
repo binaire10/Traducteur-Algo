@@ -1,17 +1,17 @@
 #ifndef LOOPABLE_H
 #define LOOPABLE_H
 
-#include "Instructable.h"
+#include "Instruction.h"
 #include <memory>
 
-class Loopable : public Instructable
+class Loopable : public Instruction
 {
 public:
-    std::shared_ptr<Instructable> instruction() const noexcept;
+    std::shared_ptr<Instruction> instruction() const noexcept;
 
 protected:
-    Loopable(const std::shared_ptr<Instructable> &instruction) noexcept;
-    std::shared_ptr<Instructable> m_instruction;
+    Loopable(const std::shared_ptr<Instruction> &instruction) noexcept;
+    std::shared_ptr<Instruction> m_instruction;
 };
 
 #endif // LOOPABLE_H

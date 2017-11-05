@@ -5,6 +5,8 @@ enable_testing()
 add_definitions(-Dundefined=0)
 add_subdirectory(struct_algo)
 include_directories("${PROJECT_SOURCE_DIR}/struct_algo")
+add_subdirectory(traducteur_algo)
+include_directories("${PROJECT_SOURCE_DIR}/traducteur_algo")
 
 set(CMAKE_CXX_STANDARD 17)
 
@@ -19,6 +21,7 @@ add_executable(test_equals_type test_equalstype.cpp)
 target_link_libraries(Traducteur_Algo struct_algo)
 target_link_libraries(test_convertion struct_algo)
 target_link_libraries(test_equals_type struct_algo)
+target_link_libraries(Traducteur_Algo traducteur_algo)
 
 add_test(conversion_scalarType_check test_convertion)
 add_test(equals_scalarType_check test_equals_type)

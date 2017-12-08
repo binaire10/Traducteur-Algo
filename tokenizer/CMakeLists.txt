@@ -23,5 +23,12 @@ set(SOURCE_FILES
         ModuleTraduction.cpp
         ModuleTraduction.h
         regex.cpp
-        regex.h TokenizerIterator.cpp TokenizerIterator.h)
+        regex.h
+        TokenizerIterator.cpp
+        TokenizerIterator.h)
 add_library(traducteur_algo STATIC ${SOURCE_FILES})
+
+add_executable(test_tokenizer_text test_tokenizer_text.cpp)
+add_test(test_tokenizer_text_check test_tokenizer_text)
+
+target_link_libraries(test_tokenizer_text traducteur_algo ${PCRE2_LIBRARIES})

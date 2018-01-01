@@ -21,7 +21,7 @@ add_executable(test_equals_type test_equalstype.cpp)
 target_link_libraries(tokenizer struct_algo)
 target_link_libraries(test_convertion struct_algo)
 target_link_libraries(test_equals_type struct_algo)
-target_link_libraries(tokenizer tokenizer)
+#target_link_libraries(tokenizer tokenizer)
 
 add_test(conversion_scalarType_check test_convertion)
 add_test(equals_scalarType_check test_equals_type)

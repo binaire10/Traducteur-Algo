@@ -18,8 +18,6 @@ if (UNIX AND NOT APPLE)
 endif ()
 
 set(SOURCE_FILES
-        TraducteurAlgo.cpp
-        TraducteurAlgo.h
         ModuleTraduction.cpp
         ModuleTraduction.h
         regex.cpp
